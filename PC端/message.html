@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息展示</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <!-- 引入css 和图标图的css  引入才可以生效 -->
+    <link rel="stylesheet" href="./assets/message.css">
+    <link rel="stylesheet" href="./assets/iconfont/iconfont.css">
+</head>
+<body>
+    <div class="a">
+        <header></header>
+        <div id="container1">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic"
+                            type="matrix"
+                            values="1 0 0 0 0
+                                    0 1 0 0 0
+                                    0 0 1 0 0
+                                    0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    <div class="container" id="container">
+        <div class="div-container sign-up-container">
+            <!-- 注册 -->
+            <div class="mes" id="reg">
+                <p></p>
+            </div>
+        </div>
+        <div class="div-container sign-in-container">
+            <!-- 个人信息 -->
+            <div class="mes" id="mes">
+                <h1>个人信息</h1>
+                <p>用户名：xxx</p>
+                <p>QQ号：xxx</p>
+                <p>手机号：xxx</p>
+                <p>班级：xxx</p>
+                <p>方向：xxx</p>
+            </div>
+        </div>
+        <!-- 侧边栏内容 -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-pannel overlay-left">
+                    <h1>查看个人信息</h1>
+                    <button class="ghost" id="signIn">查看</button>
+                </div>
+                <div class="overlay-pannel overlay-right">
+                    <h1>查看面试状态</h1>
+                    <button class="ghost" id="signUp">查看</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./mes.js"></script>
+</html>

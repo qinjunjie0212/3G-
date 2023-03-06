@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册</title>
+    <!-- 引入css 和图标图的css  引入才可以生效 -->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="a">
+        <header></header>
+        <div id="container1">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic"
+                            type="matrix"
+                            values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <!-- 注册 -->
+            <form action="#" id="reg" enctype="application/x-www-form-urlencoded">
+                <h1>用户注册</h1>
+                
+                <input type="text" placeholder="姓名" id="username">
+                <input type="text" placeholder="手机号" id="tel">
+                <input type="text" placeholder="QQ号" id="qq">
+                <input type="text" placeholder="专业班级" id="class">
+                <select class="dir">
+                    <option value="请选择方向">请选择方向</option>
+                    <option value="Web">Web</option>
+                    <option value="iOS">iOS</option>
+                    <option value="Server">Server</option>
+                    <option value="Andriod">Andriod</option>
+                    <option value="未定向">未定向</option>
+                </select>
+                <button>报名</button>
+            </form>
+        </div>
+        <div class="form-container sing-in-container">
+            <!-- 登录 -->
+            <form action="#" id="login">
+                <h1>用户登录</h1>
+                
+                <input type="text" placeholder="用户名" id="username2">
+                <input type="text" placeholder="手机号" id="tel2">
+                <button>登录</button>
+            </form>
+        </div>
+        <!-- 侧边栏内容 -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-pannel overlay-left">
+                    <h1>已有账号?</h1>
+                    <p>快点我去进行登录吧。</p>
+                    <button class="ghost" id="signIn">登录</button>
+                </div>
+                <div class="overlay-pannel overlay-right">
+                    <h1>没有帐号？</h1>
+                    <p>快快点我去报名吧。</p>
+                    <button class="ghost" id="signUp">报名</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./page.js"></script>
+</html>
