@@ -4,8 +4,7 @@ const express = require('express')
 const app = express()
 
 const joi = require('joi')
-// 导入配置文件
-const config = require('./config')
+
 // 导入cors中间件
 const cors = require('cors')
 // 将cors注册为全局中间件
@@ -14,6 +13,8 @@ app.use(cors())
 app.use(express.urlencoded({extended: false}))
 // 解析 token 的中间件
 const expressJWT = require('express-jwt')
+// 导入配置文件
+const config = require('./config')
 
 // 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
 app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] }))
@@ -44,6 +45,6 @@ app.use(function (err, req, res, next) {
 })
 
 // 调用app.listen方法，指定端口号并启动web服务器
-app.listen(3007, () => {
+app.listen('3007', () => {
     console.log('api server running at http://127.0.0.1:3007')
 })

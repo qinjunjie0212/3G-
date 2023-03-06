@@ -8,15 +8,16 @@ const config = require('../config')
 exports.regUser = (req, res) => {
     // 接收表单数据
     const userinfo = req.body
+    console.log(userinfo);
     // 定义mysql语句：检测电话号码是否已报名
-    const sql = `select * from user where tel=?`
+    const sql = 'select * from user where tel=?'
     // 判断数据是否合法
     // if(!userinfo.name || !userinfo.tel || !userinfo.qq || !userinfo.class || !userinfo.dir) {
     //     return res.send({
     //         message: '表单中各项均不能为空'
     //     })
     // }
-    db.query(sql, [userinfo.tel], function (err, results) {
+    db.query(sql, userinfo.tel, function (err, results) {
         // 执行sql语句失败
         if(err) {
             return res.send({
@@ -31,8 +32,8 @@ exports.regUser = (req, res) => {
         }
 
         // 电话号码没问题，可以在数据库中插入新成员
-        const sql = `insert into user set ?`
-        db.query(sql, {name: userinfo.name, tel: userinfo.tel, qq: userinfo.qq, class: userinfo.class, dir: userinfo.dir}, function(err, results) {
+        const sql = 'insert into user set ?'
+        db.query(sql, {name: userinfo.name, tel: userinfo.tel, qq: userinfo.qq, banji: userinfo.banji, dir: userinfo.dir}, function(err, results) {
             // 执行sql语句失败
             if(err) {
                 return res.send({
@@ -56,7 +57,7 @@ exports.regUser = (req, res) => {
 // 登录的处理函数
 exports.login = (req, res) => {
     const userinfo = req.body
-    const sql = `select * form user where tel=?`
+    const sql = `select * from user where tel=?`
     db.query(sql, userinfo.tel, function(err, results) {
         if(err) {
             return res.send(err.message)
