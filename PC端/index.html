@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900'"> -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900'">
     <style>
         @import url('http://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
         * {
@@ -27,15 +27,6 @@
             background: #161623;
         }
         
-        header {
-            position: absolute;
-            left: -19%;
-            top: -27%;
-            width: 100%;
-            height: 100%;
-            background: url(./logo.png) no-repeat;
-        }
-        
         .container {
             position: relative;
             display: flex;
@@ -48,6 +39,14 @@
             flex-wrap: wrap;
             /* 定义项目是否换行以及如何换行  */
             z-index: 1;
+        }
+        header {
+            position: absolute;
+            left: -19%;
+            top: -27%;
+            width: 100%;
+            height: 100%;
+            background: url(./logo.png) no-repeat;
         }
         
         .container .card {
@@ -111,114 +110,28 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         /* 登录注册 */
-        
-        #wrap {
-            margin: 20px auto;
-            text-align: center;
-        }
-        
-        #wrap br {
-            display: none;
-        }
-        
-        .btn-slide2 {
-            position: relative;
-            display: inline-block;
+        .login-reguser {
+            width: 150px;
             height: 50px;
-            width: 200px;
-            line-height: 50px;
-            padding: 0;
-            border-radius: 50px;
-            background: #fdfdfd;
-            border: 2px solid #0099cc;
-            margin: 10px;
-            transition: .5s;
-        }
-        
-        .btn-slide2 {
-            border: 2px solid #efa666;
-        }
-        
-        .btn-slide2:hover {
-            background-color: #efa666;
-        }
-        
-        .btn-slide:hover span.circle,
-        .btn-slide2:hover span.circle2 {
-            right: 100%;
-            margin-right: -45px;
-            background-color: #fdfdfd;
-            color: #0099cc;
-        }
-        
-        .btn-slide2:hover span.circle2 {
-            color: #efa666;
-        }
-        
-        .btn-slide:hover span.title,
-        .btn-slide2:hover span.title2 {
-            right: 40px;
-            opacity: 0;
-        }
-        
-        .btn-slide:hover span.title-hover,
-        .btn-slide2:hover span.title-hover2 {
-            opacity: 1;
-            right: 40px;
-        }
-        
-        .btn-slide span.circle,
-        .btn-slide2 span.circle2 {
-            display: block;
-            background-color: #0099cc;
-            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
             position: absolute;
-            float: right;
-            margin: 5px;
-            line-height: 42px;
-            height: 40px;
-            width: 40px;
-            top: 0;
-            right: 0;
-            transition: .5s;
-            border-radius: 50%;
-        }
-        
-        .btn-slide2 span.circle2 {
-            background-color: #efa666;
-        }
-        
-        .btn-slide span.title,
-        .btn-slide span.title-hover,
-        .btn-slide2 span.title2,
-        .btn-slide2 span.title-hover2 {
-            position: absolute;
-            right: 90px;
+            top: -23%;
+            right: -12%;
             text-align: center;
-            margin: 0 auto;
+        }
+        
+        .login-reguser a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 50px;
             font-size: 16px;
             font-weight: bold;
-            color: #30abd5;
-            transition: .5s;
         }
-        
-        .btn-slide2 span.title2,
-        .btn-slide2 span.title-hover2 {
-            color: #efa666;
-            right: 80px;
-        }
-        
-        .btn-slide span.title-hover,
-        .btn-slide2 span.title-hover2 {
-            right: 80px;
-            opacity: 0;
-        }
-        
-        .btn-slide span.title-hover,
-        .btn-slide2 span.title-hover2 {
-            color: #fff;
-        }
-        
+        /* 音乐模块 */
         .debut {
             position: absolute;
             width: 100%;
@@ -294,28 +207,6 @@
         .music-cover-background {
             position: absolute;
         }
-        
-        .login-reguser {
-            width: 150px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
-            border-left: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            position: absolute;
-            top: -23%;
-            right: -12%;
-            text-align: center;
-        }
-        
-        .login-reguser a {
-            color: #fff;
-            text-decoration: none;
-            line-height: 50px;
-            font-size: 16px;
-            font-weight: bold;
-        }
     </style>
 
 </head>
@@ -325,8 +216,9 @@
         <header></header>
         <!-- 登录注册按钮 -->
         <div class="login-reguser">
-            <a href="#">登录/注册</a>
+            <a href="./page.html">登录/注册</a>
         </div>
+        <!-- 音乐模块 -->
         <div class="debut">
             <canvas class="music-cover-background" id="background">your brower does not support canvas</canvas>
             <div class="music-cover">
