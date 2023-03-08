@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/about">返回</router-link>
+    <router-link to="/infos">返回</router-link>
     <br><br>
     <h1>我是个人报名信息</h1>
   </div>

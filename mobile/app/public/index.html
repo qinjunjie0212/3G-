@@ -4,14 +4,37 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no;" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
-  <!--   <link rel="stylesheet" href="./home.css">
-  <link rel="stylesheet" href="./search.css"> -->
-  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script type="text/javascript" src="../flexible.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      /* position:fixed; */
+      width: 100%;
+      overflow: hidden;
+      min-width: 320px;
+      max-width: 750px;
+      /* margin: 0 auto; */
+    }
+
+    @media screen and (min-width: 750px) {
+      html {
+        font-size: 37.5px !important;
+      }
+
+    }
+  </style>
 </head>
 
 <body>

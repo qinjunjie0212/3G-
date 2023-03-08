@@ -1,19 +1,25 @@
 <template>
-  <div>
-    <h1>我是详情页</h1>
-    <router-link to="/about/ios">ios</router-link>
-    <br>
-    <router-link to="/about/web">web</router-link>
-    <br>
-    <router-link to="/about/android">android</router-link>
-    <br>
-    <router-link to="/about/server">server</router-link>
-    <br>
-    <router-link to="/about/3g">3g</router-link>
-    <br><br>
-    <router-link to="/login">next</router-link>
-    <router-view></router-view>
-  </div>
+  <div class="common">
+        <div class="firstLine">FAVOURABLY RECEIVE</div>
+        <img class="one" src="./../../../../../img/灰色圆点.png" alt="">
+        <img class="two" src="./../../../../../img/浅灰树.png" alt="">
+        <img class="three" src="./../../../../../img/灰色圆点.png" alt="">
+        <img class="four" src="./../../../../../img/灰色圆点.png" alt="">
+        <img class="five" src="./../../../../../img/灰色圆点.png" alt="">
+        <router-link to="/about/web" class="kind animate__animated animate__zoomIn" @click="increment"> <img class="web"
+                src="./../../../../../img/web.png" alt=""></router-link>
+        <router-link to="/about/ios" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ios"
+                src="./../../../../../img/ios.png" alt=""></router-link>
+        <router-link to="/about/server" href="#" class="kind animate__animated animate__zoomIn" @click="increment"><img class="server"
+                src="./../../../../../img/server.png" alt=""></router-link>
+        <router-link to="/about/android" href="#" class="kind animate__animated animate__zoomIn" @click="increment"><img class="android"
+                src="./../../../../../img/Android.png" alt=""></router-link>
+        
+                <router-link to="/about/3g" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ggg"
+                src="./../../../../../img/3G恐龙.png" alt=""></router-link>
+                <router-link to="/login" class="next">next</router-link>
+                <router-view></router-view>
+    </div>
 </template>
 
 <script>
@@ -28,6 +34,108 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+body{
+    background-color: #e8e8e8;
+}
+.next{
+    position: absolute;
+    width: 2.6667rem;
+    height: 2.6667rem;
+    top: 32.5rem;
+    right: 1.5rem;
+}
+.firstLine {
+    font-size: 2.32rem;
+    font-weight: 900;
+    width: 16.533rem;
+    position: absolute;
+    z-index: 1;
+    top: 2.2667rem;
+    left: 1.2667rem;
+}
 
+.common {
+    position: relative
+}
+
+.one {
+    position: absolute;
+    left: -0.8667rem;
+    top: -0.2rem;
+    width: 9.8rem;
+    height: 13.3333rem;
+}
+
+.two {
+    position: absolute;
+    width: 17.5333rem;
+    height: 21.5333rem;
+    left: 9.2667rem;
+    top: 9.2667rem;
+}
+
+.three {
+    position: absolute;
+    left: -5.8667rem;
+    top: 23.8rem;
+    width: 13.8rem;
+    height: 19.3333rem;
+}
+
+.four {
+    position: absolute;
+    left: 6.1333rem;
+    top: 43.8rem;
+    width: 15.8rem;
+    height: 21.3333rem;
+}
+
+.five {
+    position: absolute;
+    left: 18.1333rem;
+    top: -12.2rem;
+    width: 15.8rem;
+    height: 21.3333rem;
+}
+
+.web {
+    position: absolute;
+    left: 0.2667rem;
+    top: 18.2667rem;
+    width: 9.3333rem;
+    height: 6.3333rem;
+}
+
+.ios {
+    position: absolute;
+    left: -0.7333rem;
+    top: 9.2667rem;
+    width: 11.3333rem;
+    height: 6.3333rem;
+}
+
+.server {
+    position: absolute;
+    left: 9.2667rem;
+    top: 25.2667rem;
+    width: 10.3333rem;
+    height: 5.3333rem;
+}
+
+.android {
+    position: absolute;
+    left: 9.2667rem;
+    top: 14.2667rem;
+    width: 10.3333rem;
+    height: 7.3333rem;
+}
+
+.ggg {
+    position: absolute;
+    left: 0.226rem;
+    top: 30.2667rem;
+    width: 9.3333rem;
+    height: 4.3333rem;
+}
 </style>
