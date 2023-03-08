@@ -127,4 +127,4 @@ ps[2].innerHTML=`手机号：${message.tel}`;
 ps[3].innerHTML=`专业班级：${message.classValue}`;
 ps[4].innerHTML=`方向：${message.dir}`;
 let ps2=document.querySelector('#reg').querySelector('p');
-ps2.innerHTML=`${message.status}`
+ps2.innerHTML=`${message.status}`						
