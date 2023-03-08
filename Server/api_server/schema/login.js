@@ -21,24 +21,12 @@ const tel = joi.string().pattern(/^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[
     'string.pattern.base': '请输入正确的电话号码',
     'string.empty': '电话号码不能为空'
   })
-// qq号的验证规则
-const qq = joi.string().pattern(/[1-9]([0-9]{4,10})/).required().messages({
-  'string.pattern.base': '请输入正确的QQ号',
-  'string.empty': 'QQ号不能为空'
-})
-// class的验证规则
-const banji = joi.string().required().messages({
-  'string.empty': '专业班级不能为空'
-})
-const dir = joi.string().required()
-// 注册表单的验证规则对象
-exports.reg_schema = {
+
+// 登录表单的验证规则对象
+exports.login_schema = {
   // 表示需要对 req.body 中的数据进行验证
   body: {
     name,
     tel,
-    qq,
-    banji,
-    dir
   },
 }

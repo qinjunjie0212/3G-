@@ -5,29 +5,30 @@ const signUpButton = document.querySelector('#signUp');
 signUpButton.addEventListener('click',() => container.classList.add('right-panel-active'))
 signInButton.addEventListener('click',() => container.classList.remove('right-panel-active'))
 
-let xhr=new XMLHttpRequest();
-xhr.open('post','http://localhost:3007/api/message');
-xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
-xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-xhr.send();
-xhr.onreadystatechange=function() {
-    if(xhr.readyState==4 && xhr.status==200) {
-        let a=JSON.parse(xhr.response);
-        if(a.status!==0) {
-            alert("未登录");
-            window.location.assign('./page.html');
-        }
-    }
-}
+// let xhr=new XMLHttpRequest();
+// xhr.open('get','http://localhost:3007/api/userinfo');
+// xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+// xhr.send();
+// xhr.onreadystatechange=function() {
+//     if(xhr.readyState==4 && xhr.status==200) {
+//         let a=JSON.parse(xhr.response);
+//         if(a.status!==0) {
+//             alert("未登录");
+//             window.location.assign('./page.html');
+//         }
+//     }
+// }
+
 
 // 退出登录
 // let token=localStorage.getItem('userToken');
 // console.log(token);
-let btn=document.querySelector('.login');
-btn.addEventListener('click',()=>{
-    localStorage.clear('userToken');
-    window.location.assign('./page.html');
-})
+// let btn=document.querySelector('.login');
+// btn.addEventListener('click',()=>{
+//     localStorage.clear('userToken');
+//     window.location.assign('./page.html');
+// })
 // if(!token) {
 //     alert('未登录');
 //     window.location.assign('./login.html');
@@ -42,6 +43,19 @@ ps[3].innerHTML=`专业班级：${message.classValue}`;
 ps[4].innerHTML=`方向：${message.dir}`;
 let ps2=document.querySelector('#reg').querySelector('p');
 ps2.innerHTML=`${message.status}`;
+if(message.status === '1') {
+	ps2.innerHTML = `一面通过`
+} else if(message.status === '2') {
+	ps2.innerHTML = `一面未通过`
+} else if(message.status === '3') {
+	ps2.innerHTML = `二面通过`
+} else if(message.status === '4') {
+	ps2.innerHTML = `二面未通过`
+} else if(message.status === '5') {
+	ps2.innerHTML = `三面通过`
+} else if(message.status === '0') {
+	ps2.innerHTML = `报名成功`
+}
 
 // 字体动画
 const elts = {
