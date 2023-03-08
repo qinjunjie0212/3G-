@@ -15,7 +15,7 @@ reg.addEventListener('submit',function(e) {
     let classValue=document.querySelector('#class').value.trim();
     let dir=document.querySelector('.dir').value;
     let message={
-        username,qq,tel,classValue,dir,status:'一面中'
+        username,qq,tel,classValue,dir,status:'0'
     };
     localStorage.setItem('message',JSON.stringify(message));
     const xhr=new XMLHttpRequest();
@@ -34,31 +34,33 @@ reg.addEventListener('submit',function(e) {
     }
 })
 //登录
-let token=localStorage.getItem('userToken');
-// if(token) {
-//     window.location.assign('./index.html')
+// let token=localStorage.getItem('userToken');
+// // if(token) {
+// //     window.location.assign('./index.html')
+// // }
+// let username2=document.querySelector('#username2').value.trim();
+// let tel2=document.querySelector('#tel2').value.trim();
+// let xhr=new XMLHttpRequest();
+// xhr.open('post','http://localhost:3007/api/message');
+// xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+// xhr.send(`name=${username2}&tel=${tel2}`);
+// xhr.onreadystatechange=function() {
+//     if(xhr.readyState===4 && xhr.status===200) {
+//         let a=JSON.parse(xhr.response);
+//         console.log(a);
+//         if(a.status===0) {
+//             alert('已登录');
+//             window.location.assign('./message.html');
+//         }
+//     }
 // }
-let username2=document.querySelector('#username2').value.trim();
-let tel2=document.querySelector('#tel2').value.trim();
-let xhr=new XMLHttpRequest();
-xhr.open('post','http://localhost:3007/api/message');
-xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
-xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-xhr.send(`name=${username2}&tel=${tel2}`);
-xhr.onreadystatechange=function() {
-    if(xhr.readyState===4 && xhr.status===200) {
-        let a=JSON.parse(xhr.response);
-        console.log(a);
-        if(a.status===0) {
-            alert('已登录');
-            window.location.assign('./message.html');
-        }
-    }
-}
 const login=document.querySelector('#login');
-login.addEventListener('click',function(e) {
+login.addEventListener('submit',function(e) {
     e.preventDefault();
-    // console.log(username2,tel2);
+    let username2=document.querySelector('#username2').value.trim();
+    let tel2=document.querySelector('#tel2').value.trim();
+    console.log(username2,tel2);
     const xhr=new XMLHttpRequest();
     xhr.open('post','http://localhost:3007/api/login');
     xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
