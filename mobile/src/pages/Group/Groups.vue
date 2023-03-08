@@ -1,11 +1,11 @@
 <template>
   <div class="common">
-        <div class="firstLine">FAVOURABLY RECEIVE</div>
-        <img class="one" src="./../../assets/img/灰色圆点.png" alt="">
+    <div class="firstLine">FAVOURABLY RECEIVE</div>
+        <!-- <img class="one" src="./../../assets/img/灰色圆点.png" alt="">
         <img class="two" src="./../../assets/img/浅灰树.png" alt="">
         <img class="three" src="./../../assets/img/灰色圆点.png" alt="">
         <img class="four" src="./../../assets/img/灰色圆点.png" alt="">
-        <img class="five" src="./../../assets/img/灰色圆点.png" alt="">
+        <img class="five" src="./../../assets/img/灰色圆点.png" alt=""> -->
         <router-link to="/about/web" class="kind animate__animated animate__zoomIn" @click="increment"> <img class="web"
                 src="./../../assets/img/web.png" alt=""></router-link>
         <router-link to="/about/ios" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ios"
@@ -17,7 +17,7 @@
         
                 <router-link to="/about/3g" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ggg"
                 src="./../../assets/img/3G恐龙.png" alt=""></router-link>
-                <router-link to="/login" class="next">next</router-link>
+                <router-link to="/login" class="next"><img src="./../../assets/img/右箭头.png" alt=""></router-link>
                 <router-view></router-view>
     </div>
 </template>
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-body{
+/* body{
     background-color: #e8e8e8;
 }
 .next{
@@ -98,6 +98,16 @@ body{
     width: 15.8rem;
     height: 21.3333rem;
 }
+ */
+ .firstLine {
+    font-size: 2.32rem;
+    font-weight: 900;
+    width: 16.533rem;
+    position: absolute;
+    z-index: 1;
+    top: 2.2667rem;
+    left: 1.2667rem;
+}
 
 .web {
     position: absolute;
@@ -137,5 +147,13 @@ body{
     top: 30.2667rem;
     width: 9.3333rem;
     height: 4.3333rem;
+}
+
+.next img{
+    width: 4.3333rem;
+    height: 4.3333rem;
+    position: absolute;
+    right: 17px;
+    top: 31rem;
 }
 </style>

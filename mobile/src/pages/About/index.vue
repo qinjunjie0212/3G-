@@ -1,6 +1,5 @@
 <template>
   <div class="common">
-    <div class="firstLine">FAVOURABLY RECEIVE</div>
         <img class="one" src="./../../assets/img/灰色圆点.png" alt="">
         <img class="two" src="./../../assets/img/浅灰树.png" alt="">
         <img class="three" src="./../../assets/img/灰色圆点.png" alt="">
@@ -22,18 +21,8 @@ export default {
 
 <style scoped>
 body{
-    background-color: #e8e8e8;
+    background-color:#f8f8f8;
 }
-.firstLine {
-    font-size: 2.32rem;
-    font-weight: 900;
-    width: 16.533rem;
-    position: absolute;
-    z-index: 1;
-    top: 2.2667rem;
-    left: 1.2667rem;
-}
-
 .common {
     position: relative
 }
@@ -44,6 +33,7 @@ body{
     top: -0.2rem;
     width: 9.8rem;
     height: 13.3333rem;
+    opacity: .6;
 }
 
 .two {
@@ -52,6 +42,7 @@ body{
     height: 21.5333rem;
     left: 9.2667rem;
     top: 9.2667rem;
+    opacity: .6;
 }
 
 .three {
@@ -60,6 +51,7 @@ body{
     top: 23.8rem;
     width: 13.8rem;
     height: 19.3333rem;
+    opacity: .6;
 }
 
 .four {
@@ -68,6 +60,7 @@ body{
     top: 43.8rem;
     width: 15.8rem;
     height: 21.3333rem;
+    opacity: .6;
 }
 
 .five {
@@ -76,6 +69,7 @@ body{
     top: -12.2rem;
     width: 15.8rem;
     height: 21.3333rem;
+    opacity: .6;
 }
 
 </style>

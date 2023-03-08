@@ -8,6 +8,7 @@
         <img src="../../assets/img/浅灰树.png" alt="" class="tree">
         <img src="../../assets/img/太阳.png" alt="" class="sun">
         <!-- <router-link to="/About">返回</router-link> -->
+        <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
         <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
             <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Login_input"></div><br> 
             <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Login_input"></div><br>
@@ -131,5 +132,13 @@
     left: 3.7rem;
     font-weight: bold;
     font-size: 2.5rem;
+}
+.last img{
+    position: absolute;
+    width: 2.3333rem;
+    height: 2.3333rem;
+    position: absolute;
+    left: -0.5rem;
+    top: -12.5rem;
 }
 </style>

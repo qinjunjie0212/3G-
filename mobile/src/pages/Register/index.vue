@@ -9,6 +9,7 @@
         <img src="../../assets/img/太阳.png" alt="" class="sun">
     <!-- 这里的返回与之前不同，是返回到登录页面 -->
     <!-- <router-link to="/login">返回</router-link> -->
+    <router-link class="last" to="/login"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
     <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
             <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Register_input"></div><br> 
             <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Register_input"></div><br>
@@ -160,5 +161,14 @@ select option {
     left: 2.8rem;
     font-weight: bold;
     font-size: 2.5rem;
+}
+
+.last img{
+    position: absolute;
+    width: 2.3333rem;
+    height: 2.3333rem;
+    position: absolute;
+    left: -0.5rem;
+    top: -12.5rem;
 }
 </style>
