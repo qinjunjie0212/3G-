@@ -2,9 +2,14 @@
 ## 前端页面分析
 ###  路由组件
 #### Home首页路由组件
-#### Search路由组件
-#### login登录路由组件
-#### Refister注册路由
+#### About实验室相关首页路由组件
+#### Login登录路由组件
+#### Refister报名路由组件
+#### Group里各组以及实验室的介绍组件
+#### Infos个人相关主页组件
+#### Infos子组件
+##### Infoss里Relate个人相关主页组件
+##### Infoss里Info个人报名信息组件
+##### Infoss里State个人面试状态组件
+
 ### 非路由组件
-#### Header[首页，搜索页]
-#### Footer[首页和搜索页]，登录|注册页面无

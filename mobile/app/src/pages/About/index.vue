@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header></header>
+    <!-- <header></header> -->
     <Groups v-show="$route.meta.show"/>
     <router-view></router-view>
   </div>
@@ -16,9 +16,5 @@ export default {
 </script>
 
 <style scoped>
-header{
-    width: 100%;
-    height: 2.6667rem;
-    background-color: pink;
-}
+
 </style>
