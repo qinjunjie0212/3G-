@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body {
+  margin: 0;
+}
+
+/* a {
+  text-decoration: none;
+  color: #21272b;
+  cursor: pointer;
+} */
+
+article,aside,footer,header,nav,section {
+  display: block;
+}
+
+
+/* a:active,a:hover {
+  outline-width: 0;
+} */
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.swiper-slide__block {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  text-align: left;
+}
+
+
+@media (min-width:1200px) {
+  .swiper-slide__block .swiper-slide__block__img {
+    width: 65%;
+    max-height: 476px;
+    height: 476px;
+    max-width: 735px;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+.swiper-slide__block .swiper-slide__block__img img {
+  width: 100%;
+  height: auto;
+  transition: all .3s ease-in-out;
+}
+
+@media (min-width:1200px) {
+  .swiper-slide__block .swiper-slide__block__img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+  }
+}
+
+.swiper-slide__block .swiper-slide__block__img:hover img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-filter: brightness(.5);
+  filter: brightness(.5);
+}
+
+.swiper-slide__block .swiper-slide__block__text {
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+@media (min-width:768px) {
+  .swiper-slide__block .swiper-slide__block__text {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width:1200px) {
+  .swiper-slide__block .swiper-slide__block__text {
+    width: 40%;
+    height: 100%;
+    max-height: 476px;
+    max-width: 400px;
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .swiper-slide__block .swiper-slide__block__text:before {
+    content: "";
+    display: block;
+    width: 200px;
+    max-width: 408px;
+    height: 100%;
+    background-color: #e4e4e4;
+    position: absolute;
+    left: -100px;
+  }
+}
+
+.swiper-slide__block .main__title {
+  color: #f2f3f3;
+  text-transform: uppercase;
+  font-family: Montserrat,sans-serif;
+  font-weight: 900;
+  font-size: 2.6em;
+  margin: 0px;
+  text-shadow: 7px 7px 16px #d2d2d2;
+}
+
+
+@media (min-width:768px) {
+  .swiper-slide__block .main__title {
+    font-size: 3em;
+  }
+}
+
+@media (min-width:1200px) {
+  .swiper-slide__block .main__title {
+    margin-top:20px;
+  }
+}
+
+.swiper-slide__block .main__subtitle {
+  margin: 2px 0;
+  font-weight: 700;
+  font-family: Montserrat,sans-serif;
+  font-size: .9em;
+  color: #f2f3f3;
+}
+
+@media (min-width:768px) {
+  .swiper-slide__block .main__subtitle {
+    font-size: .9em;
+  }
+}
+
+.swiper-slide__block .main__subtitle span {
+  font-family: "Patua One",cursive;
+  font-style: normal;
+  color: #00a8af;
+  letter-spacing: 1px;
+}
+
+.swiper-slide__block .main__subtitle,.swiper-slide__block .main__title,.swiper-slide__block .paragraphe {
+  color: #21272b;
+  z-index: 2;
+  position: relative;
+}
+
+
+@media (min-width:1200px) {
+  .section__slider {
+    padding: 160px 0;
+  }
+}
+
+.section__slider .container__center {
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width:992px) {
+  .section__slider .container__center {
+    max-width: 1050px;
+  }
+}
+
+
+
+</style>
+<body>
+    <section class="section__slider">
+        <div class="container__center">
+           <div class="swiper-slide">
+            <div class="swiper-slide__block">
+             <div class="swiper-slide__block__img" data-swiper-parallax-y="70%">
+              <a target="_blank" href="index.html">
+               <img src="./新建压缩文件(2)/images/logo9_20230306222428.png" alt="">
+              </a>
+             </div>
+             <div class="swiper-slide__block__text">
+              <p data-swiper-parallax-x="-60%" class="main__title">XiYou•Mobile
+                                       </p>
+              <h3 data-swiper-parallax-x="-50%" class="main__subtitle">Begin in 
+                                                                   <span> • 2011</span> </h3>
+              <p data-swiper-parallax-x="-40%" class="paragraphe">
+                西安邮电大学移动应用开发实验室，亦称西安邮电大学3G实验室。
+            创建于2011年，隶属于西安邮电大学计算机学院，专注于移动应用开发。
+            2012年被谷歌授予“Android人才培养示范基地”
+            实验室位于西安邮电大学长安校区东区教学楼一层FZ155教室，西邮IT应用型人才实训中心。
+            实验室不仅为同学们提供了丰富的软、硬件资源，包括：
+            120m2配备空调、独立桌子、靠背椅、饮水机的干净、整洁、舒适的学习环境。
+            公共图书角、免费学习资料、科学上网、共享打印设备、投影仪等便利的学习资源。
+            学习路线、周报或圆桌分享、官网wiki 的学习分享、定时的讲课、老师指导的独特学习方式。
+            毕业学长学姐的工作经验指导、春招秋招的内推直推优势的就业资源。
+            并且一直以“传、帮、带”的学习方式，秉承“用代码编织未来”的宗旨，每年以百分百的就业率，
+            源源不断的为国内著名互联网公司输送优秀人才。目前由Android、iOS、Web及后台4个小组组成~
+          </p>
+          </div>
+
+            </div>
+           </div>
+        </div>
+          
+       </section>
+</body>
+</html>
