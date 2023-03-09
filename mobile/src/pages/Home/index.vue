@@ -1,5 +1,7 @@
 <template>
   <div>
+    <router-link to="/about">
+
     <img src="./../../assets/img/背景.jpeg" alt="">
         <img src="./../../assets/img/三角.png" alt="">
         <img src="./../../assets/img/恐龙6.png" alt="">
@@ -11,9 +13,9 @@
         <img src="./../../assets/img/深圆点.png" alt="">
         <img src="./../../assets/img/灰色圆点.png" alt="">
         <img src="./../../assets/img/灰色三角.png" alt="">
-    <router-link to="/about">
-      <img src="./../../assets/img/右箭头.png" alt="" id="point">
     </router-link>
+    <span>点击任意位置继续</span>
+
   </div>
 </template>
 
@@ -116,14 +118,15 @@ img:nth-child(11){
     top:3rem;
     z-index: -999;
   }
-#point{
-    z-index: 1000;
+  span{
     position: fixed;
-    bottom: 8rem;
-    height: 5rem;
-    width: 5rem;
-    margin-left: -2.5rem;
+    bottom: 1rem;
+    font-size: 0.75rem;
+    width: 10rem;
     left: 50%;
-}
+    margin-left: -5rem;
+    text-align: center;
+    z-index: 99999;
+  }
 </style>
   
