@@ -68,7 +68,7 @@ exports.login = (req, res) => {
             })
         }
         //在服务器端生成Token字符串
-        const user = {...results[0], dir:''}
+        const user = {...results[0], qq:'', banji:'', dir:''}
         //对用户信息进行加密，生成Token字符串
         // 生成 Token 字符串
         const tokenStr = jwt.sign(user, config.jwtSecretKey, {
