@@ -4,7 +4,11 @@
     <div id="father">
         <div id="picture">
             <img src="./../../assets/img/太阳.png" class="sun1">
-            <img src="./../../assets/img/左箭头.png" class="leftArrow">
+    <router-link to="/infos">
+      <img src="./../../assets/img/左箭头.png" class="leftArrow">
+
+    </router-link>
+
         </div>
         <div id="start" @click="changeClass(1)">
             <img src="./../../assets/img/恐龙2.png"  ref="1" v-show="changenum" class="inimg">
@@ -27,9 +31,6 @@
             <h2>开始</h2>
         </div>
     </div>
-    <router-link to="/infos">返回</router-link>
-    <br><br>
-    <h1>我是面试状态</h1>
   </div>
 </template>
 
