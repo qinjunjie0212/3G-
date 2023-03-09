@@ -1,8 +1,8 @@
 <template>
     <div>
       <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
-      <h1 class="css356b36141d24eb5">Web</h1>
-      <div class="box glass-container">
+      <h1>Web</h1>
+      <div class="box glass-container animate__animated animate__backInLeft">
         <div class="introduce">Web组致力于以HTML/HTML5、CSS/CSS3、Less、Javascript、jQuery、Ajax为主的Web前端开发，和以Node.js、PHP、JSP、ASP.NET为主的后台开发。 如今已上线项目有手机版网站《西邮图书馆》、《高校成绩》，校园综合网站《MyCollege》（包含有易校园（校园二手市场）、论坛、资料库、订餐吧、 PC浏览器版成绩单和图书查询、学生会、实验室等模块）正在进行中。</div>
       </div>
       <!-- <router-link to="/About">返回</router-link> -->
@@ -27,6 +27,10 @@ h1{
   position: absolute;
     top: 5rem;
     left: 2.2rem;
+    font-family: 'winmantun23001356b6000b824eb5';
+    font-size: 4rem;
+    color: #efefef;
+    text-shadow: 0 0 0.5em #979896, 0 0 0.2em #5c5c5c;
 }
 .introduce{
   width: 16.333rem;

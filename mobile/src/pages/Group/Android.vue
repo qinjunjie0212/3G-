@@ -2,7 +2,7 @@
   <div>
     <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
     <h1>Android</h1>
-    <div class="box glass-container">
+    <div class="box glass-container animate__animated animate__backInLeft">
         <div class="introduce">Android组 利用安卓系统的开放性，进行了各种各样的移动应用开发，是实验室中成果最多、规模最大的开发组。Android开发组多次参加多种大赛， 并获得了不错的成绩！应用《酷步》，曾参加全国级大赛并获奖，《西邮图书借阅系统》率先发布， 《iXiyou》整合了多种与西邮校园相关的功能，方便了西邮学生。Android开发组已走出了多位优秀的学长、学姐，并就职于国内知名企业</div>
       </div>
   </div>
@@ -16,6 +16,7 @@ name:'Android'
 </script>
 
 <style scoped>
+
   .last img{
   width: 2.3333rem;
     height: 2.3333rem;
@@ -27,7 +28,10 @@ h1{
   position: absolute;
     top: 5rem;
     left: 2.2rem;
-    font-family:'jdzhonyuanjian356b36141d24eb5';
+    font-family: 'winmantun23001356b6000b824eb5';
+    font-size: 4rem;
+    color: #efefef;
+    text-shadow: 0 0 0.5em #979896, 0 0 0.2em #5c5c5c;
   }
 .introduce{
   width: 16.333rem;
