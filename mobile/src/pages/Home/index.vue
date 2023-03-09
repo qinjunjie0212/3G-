@@ -28,10 +28,8 @@ export default {
 }
 </script>
 <style scoped>
-
-
-
 div {
+  margin-top: 4rem;
     font: weight 50px; ;
     /* background: #fafafa; */
     position: relative;
@@ -116,12 +114,13 @@ img:nth-child(11){
     width: 30%;
     left: 3rem;
     top:3rem;
-    z-index: 2;}
+    z-index: -999;
+  }
 #point{
-  z-index: 1000;
+    z-index: 1000;
     position: fixed;
-    bottom: 10rem;
-    height: 3rem;
+    bottom: 8rem;
+    height: 5rem;
     width: 5rem;
     margin-left: -2.5rem;
     left: 50%;
