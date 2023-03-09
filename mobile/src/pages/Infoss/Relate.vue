@@ -6,15 +6,17 @@
 <br>
 <br>
     <h1>Personal Page</h1>
+    <img src="./../../assets/img/恐龙5.png" alt="" class="long">
+
         <img src="../../assets/img/圆.png" alt="" class="circle1">
         <img src="../../assets/img/圆.png" alt="" class="circle2">
         <img src="../../assets/img/圆.png" alt="" class="circle3">
         <img src="../../assets/img/圆.png" alt="" class="circle4">
         <img src="../../assets/img/浅灰树.png" alt="" class="tree">
         <img src="../../assets/img/太阳.png" alt="" class="sun">
-    <router-link to="/infos/info" class="btn">个人信息</router-link>
+    <router-link to="/infos/info" class="btn1 btn">个人信息</router-link>
     <br><br>
-    <router-link to="/infos/state" class="btn">面试状态</router-link><button></button>
+    <router-link to="/infos/state" class="btn2 btn">面试状态</router-link><button></button>
   </div>
 </template>
 <script>
@@ -24,11 +26,10 @@ components:{}
 }
 </script>
 
-<style>
+<style scoped>
 .btn {
     position: absolute;
     left: 30%;
-    margin-top:8rem ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +43,12 @@ components:{}
     opacity: 0.8;
     color: black;
     font-size: .8rem;
+}
+.btn2{
+  margin-top: 10rem;
+}
+.btn1{
+  margin-top: 5rem;
 }
 .circle1{
     position: absolute;
@@ -97,6 +104,16 @@ components:{}
     top: 1rem;
     width: 3rem;
     left: 1rem;
+}
+h1{
+  font-size: 2rem;
+  text-align: center;
+}
+.long{
+  position: fixed;
+  right: 0;
+  bottom: -5rem;
+  width: 45rem;
 }
 
 
