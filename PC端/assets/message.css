@@ -252,3 +252,16 @@ button.ghost:active{
 	
 	user-select: none;
 }
+.login {
+    position: absolute;
+    right: 8rem;
+    top: 3rem;
+    border: none;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background: -webkit-linear-gradient(left,#417dff,#25bbd2);
+}

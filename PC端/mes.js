@@ -11,7 +11,6 @@ xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
 xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 xhr.send();
 xhr.onreadystatechange=function() {
-    
 	if(xhr.readyState==4 && xhr.status==200) {
 		let a=JSON.parse(xhr.response);
 		if(a.message==='获取用户信息失败') {
@@ -49,7 +48,7 @@ let token=localStorage.getItem('userToken');
 console.log(token);
 let btn=document.querySelector('.login');
 btn.addEventListener('click',()=>{
-    window.location.assign('./page.html');
+    window.location.assign('./index.html');
 	localStorage.clear('userToken');
 })
 if(!token) {
@@ -172,6 +171,3 @@ btn.addEventListener('click',()=>{
     window.location.assign('./login.html')
 })
  */
-
-
-
