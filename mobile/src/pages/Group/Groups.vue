@@ -6,7 +6,7 @@
         <img class="three" src="./../../assets/img/灰色圆点.png" alt="">
         <img class="four" src="./../../assets/img/灰色圆点.png" alt="">
         <img class="five" src="./../../assets/img/灰色圆点.png" alt=""> -->
-        <router-link to="/about/web" class="kind animate__animated animate__zoomIn" @click="increment"> <img class="web"
+        <router-link to="/about/web" class="kind animate__animated animate__zoomIn" @click.native="increment"> <img class="web"
                 src="./../../assets/img/web.png" alt=""></router-link>
         <router-link to="/about/ios" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ios"
                 src="./../../assets/img/ios.png" alt=""></router-link>
@@ -30,8 +30,15 @@ import Android from './../Group/Android.vue'
 import GGG from './../Group/GGG.vue'
 export default {
     name:'About',
-    components:{Ios,Web,Server,GGG,Android}   
+    components:{Ios,Web,Server,GGG,Android},
+    methods:{
+        increment (){
+            // this.classList.add('animate__animated', 'animate__zoomOut');
+            // console.log('aaa')
+            }
+        }
 }
+
 </script>
 
 <style scoped>
