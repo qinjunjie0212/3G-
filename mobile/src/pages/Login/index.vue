@@ -39,7 +39,10 @@
                 this.$router.replace({
                     path: '/infos'
             }
-            )},3000)
+            )},1000)
+            }
+            else{
+                alert(res.data.message)
             }
           }).catch(error =>{
             alert('未知错误')
