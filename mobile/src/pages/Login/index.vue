@@ -33,7 +33,8 @@
             name: this.loginInfo.name,
             tel: this.loginInfo.tel
           }).then(res=>{
-            if(res.data.message === '报名成功') {
+            alert(res.data.message)
+            if(res.data.message === '登录成功') {
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/infos'
