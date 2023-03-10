@@ -58,7 +58,7 @@ exports.regUser = (req, res) => {
 // 登录的处理函数
 exports.login = (req, res) => {
     const userinfo = req.body
-    console.log(userinfo);
+    // console.log(userinfo);
     const sql = `select * from user where tel=?`
     db.query(sql, userinfo.tel, function (err, results) {
         if (err) {
@@ -70,17 +70,26 @@ exports.login = (req, res) => {
             })
         }
         //在服务器端生成Token字符串
-        const user = { ...results[0], qq: '', banji: '', dir: '' }
+        const user = {
+            id: userinfo.id,
+            name: userinfo.name,
+            tel: userinfo.tel,
+            qq: userinfo.qq,
+            banji: userinfo.banji,
+            dir: userinfo.dir,
+            status: userinfo.status
+        }
         //对用户信息进行加密，生成Token字符串
         // 生成 Token 字符串
         const tokenStr = jwt.sign(user, config.jwtSecretKey, {
             expiresIn: '72h', // token 有效期为 72 个小时
         })
+        // console.log(req.auth);
         res.send({
             status: 0,
             message: '登录成功',
             // 为了方便客户端使用 Token，在服务器端直接拼接上 Bearer 的前缀
-            token: 'Bearer' + tokenStr,
+            token: 'Bearer ' + tokenStr,
         })
     })
 }
