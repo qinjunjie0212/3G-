@@ -43,6 +43,7 @@ export default {
     },
     components:{},
     methods:{
+        // localStorage.setItem('name',this.formData.name)
        registInfo() {
         this.$axios.post('http://127.0.0.1:3007/api/reguser', {
             name: this.formData.username,
