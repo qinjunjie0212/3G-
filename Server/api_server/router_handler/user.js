@@ -7,6 +7,7 @@ const config = require('../config')
 // 报名的处理函数
 exports.regUser = (req, res) => {
     // 接收表单数据
+    // console.log(req);
     const userinfo = req.body
     console.log(userinfo);
     // 定义mysql语句：检测电话号码是否已报名
@@ -19,13 +20,13 @@ exports.regUser = (req, res) => {
     // }
     db.query(sql, userinfo.tel, function (err, results) {
         // 执行sql语句失败
-        if(err) {
+        if (err) {
             return res.send({
                 message: err.message
             })
         }
         // 电话号码已存在
-        if(results.length > 0) {
+        if (results.length > 0) {
             return res.send({
                 message: '该电话号码已报名！'
             })
@@ -33,15 +34,15 @@ exports.regUser = (req, res) => {
 
         // 电话号码没问题，可以在数据库中插入新成员
         const sql = 'insert into user set ?'
-        db.query(sql, {name: userinfo.name, tel: userinfo.tel, qq: userinfo.qq, banji: userinfo.banji, dir: userinfo.dir}, function(err, results) {
+        db.query(sql, { name: userinfo.name, tel: userinfo.tel, qq: userinfo.qq, banji: userinfo.banji, dir: userinfo.dir }, function (err, results) {
             // 执行sql语句失败
-            if(err) {
+            if (err) {
                 return res.send({
                     message: err.message
                 })
             }
             // sql语句执行成功，但影响行数不为1
-            if(results.affectedRows !== 1) {
+            if (results.affectedRows !== 1) {
                 return res.send({
                     message: '报名失败，请稍后再试'
                 })
@@ -57,18 +58,19 @@ exports.regUser = (req, res) => {
 // 登录的处理函数
 exports.login = (req, res) => {
     const userinfo = req.body
+    console.log(userinfo);
     const sql = `select * from user where tel=?`
-    db.query(sql, userinfo.tel, function(err, results) {
-        if(err) {
+    db.query(sql, userinfo.tel, function (err, results) {
+        if (err) {
             return res.send(err.message)
         }
-        if(results.length !== 1) {
+        if (results.length !== 1) {
             return res.send({
                 message: '登录失败'
             })
         }
         //在服务器端生成Token字符串
-        const user = {...results[0], qq:'', banji:'', dir:''}
+        const user = { ...results[0], qq: '', banji: '', dir: '' }
         //对用户信息进行加密，生成Token字符串
         // 生成 Token 字符串
         const tokenStr = jwt.sign(user, config.jwtSecretKey, {

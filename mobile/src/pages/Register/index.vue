@@ -11,12 +11,12 @@
     <!-- <router-link to="/login">返回</router-link> -->
     <router-link class="last" to="/login"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
     <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
-            <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Register_input"></div><br> 
-            <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Register_input"></div><br>
-            <div class="Div_hint"><span class="Span_hint">QQ号：</span><input type="text" placeholder="QQ号" id="qq" class="Register_input"></div><br>
-            <div class="Div_hint"><span class="Span_hint">专业班级：</span><input type="text" placeholder="专业班级" id="class" class="Register_input"></div><br>
+            <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Register_input" v-model="formData.username"></div><br> 
+            <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Register_input" v-model="formData.tel"></div><br>
+            <div class="Div_hint"><span class="Span_hint">QQ号：</span><input type="text" placeholder="QQ号" id="qq" class="Register_input" v-model="formData.qq"></div><br>
+            <div class="Div_hint"><span class="Span_hint">专业班级：</span><input type="text" placeholder="专业班级" id="class" class="Register_input" v-model="formData.class"></div><br>
             <div class="Div_hint"><span class="Span_hint">方向选择：</span>
-                <select class="dir">
+                <select class="dir" v-model="formData.dir">
                     <option value="请选择方向">请选择方向</option>
                     <option value="Web">Web</option>
                     <option value="iOS">iOS</option>
@@ -25,16 +25,47 @@
                     <option value="未定向">未定向</option>
                 </select>
             </div><br>
-            <router-link to="/infos" class="btn">报名</router-link><!-- 报名按键（报名成功后直接跳转到个人主页面） -->
+            <a class="btn" @click="registInfo">报名</a>
+            <!-- <router-link  to="/infos" class="btn">报名</router-link>报名按键（报名成功后直接跳转到个人主页面） -->
         </form>
     <!-- <router-link to="/about">点击回看各组介绍</router-link> -->
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
 export default {
-    name:'Register'
-}
+    name:'Register',
+    data(){
+        return {
+            formData:{}
+        }
+    },
+    components:{},
+    methods:{
+       registInfo() {
+        this.$axios.post('http://127.0.0.1:3007/api/reguser', {
+            name: this.formData.username,
+            tel: this.formData.tel,
+            qq:this.formData.qq,
+            banji:this.formData.class,
+            dir:this.formData.dir,
+          }).then(res=>{
+            alert(res.data.message)
+            if(res.data.message === '报名成功') {
+                setTimeout(() => {
+                this.$router.replace({
+                    path: '/infos'
+            }
+            )},3000)
+            }
+          }).catch(error =>{
+            alert('未知错误')
+ 	  })
+        }
+          //通常本地开发会遇到跨域问题，所以我们需要在config的index.js里面配置proxyTable反向代理，具体详情自行百度，有很多很清楚的讲解与写法。
+    }
+      } 
 </script>
 
 <style scoped>
