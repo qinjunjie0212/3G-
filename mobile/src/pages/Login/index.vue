@@ -12,8 +12,8 @@
         <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
             <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Login_input" v-model="loginInfo.name"></div><br> 
             <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Login_input" v-model="loginInfo.tel"></div><br>
-            <a class="btn" @click="loginForm">登录</a>
-            <!-- <router-link to="/Infos" class="btn">登录</router-link> -->
+            <!-- <a class="btn" @click="loginForm">登录</a> -->
+            <router-link to="/Infos" class="btn">登录</router-link>
             <router-link to="/Register" class="btn">我要报名</router-link>
         </form>
    </div>
@@ -28,13 +28,13 @@
     }
   },
   methods:{
-/*     loginForm(){
+     loginForm(){
             this.$axios.post('http://localhost:3007/api/login', {
             name: this.loginInfo.name,
             tel: this.loginInfo.tel
           }).then(res=>{
             alert(res.data.message)
-            if(res.data.message === '报名成功') {
+            if(res.data.message === '登录成功') {
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/infos'
@@ -44,7 +44,7 @@
           }).catch(error =>{
             alert('未知错误')
  	  })
-        } */
+        } 
   }
   }
   </script>
@@ -66,8 +66,10 @@
     border-bottom: .04rem solid black;
     opacity: 0.8;
     background-color: transparent;
-    margin-left: 1.3333rem;
+    margin-left: -1rem;
+
 }
+
 .Login_input:focus {
     outline: none;
 }
@@ -95,7 +97,7 @@
     background: #f4cf47;
     opacity: 0.8;
     margin-bottom: 1.2rem;
-    margin-left: 2.2667rem;
+    margin-left: 5.2667rem;
     color: black;
     font-size: .8rem;
 }
@@ -130,6 +132,7 @@
     left: -2.5rem;
     top: 4rem;
     opacity: 0.6;
+    z-index: -10;
 }
 .tree{
     position: absolute;
@@ -145,6 +148,7 @@
     top: -9rem;
     left: -2.1333rem;
     opacity: 0.8;
+    z-index: 0;
 }
 
 .title {
@@ -153,6 +157,7 @@
     left: 3.7rem;
     font-weight: bold;
     font-size: 2.5rem;
+    z-index: 10;
 }
 .last img{
     position: absolute;
