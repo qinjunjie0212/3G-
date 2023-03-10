@@ -5,57 +5,59 @@ const signUpButton = document.querySelector('#signUp');
 signUpButton.addEventListener('click',() => container.classList.add('right-panel-active'))
 signInButton.addEventListener('click',() => container.classList.remove('right-panel-active'))
 
-// let xhr=new XMLHttpRequest();
-// xhr.open('get','http://localhost:3007/api/userinfo');
-// xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
-// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-// xhr.send();
-// xhr.onreadystatechange=function() {
-//     if(xhr.readyState==4 && xhr.status==200) {
-//         let a=JSON.parse(xhr.response);
-//         if(a.status!==0) {
-//             alert("未登录");
-//             window.location.assign('./page.html');
-//         }
-//     }
-// }
+let xhr=new XMLHttpRequest();
+xhr.open('get','http://localhost:3007/api/userinfo');
+xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
+xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+xhr.send();
+xhr.onreadystatechange=function() {
+	if(xhr.readyState==4 && xhr.status==200) {
+		let a=JSON.parse(xhr.response);
+		if(a.message==='获取用户信息失败') {
+			alert("未登录");
+			window.location.assign('./page.html');
+		}else {
+			let ps=document.querySelector('#mes').querySelectorAll('p');
+			ps[0].innerHTML=`姓名：${a.data.name}`;
+			ps[1].innerHTML=`QQ号：${a.data.qq}`;
+			ps[2].innerHTML=`手机号：${a.data.tel}`;
+			ps[3].innerHTML=`专业班级：${a.data.banji}`;
+			ps[4].innerHTML=`方向：${a.data.dir}`;
+			let ps2=document.querySelector('#reg').querySelector('p');
+			
+			if(a.data.status === '1') {
+				ps2.innerHTML = `一面通过`
+			} else if(a.data.status === '2') {
+				ps2.innerHTML = `一面未通过`
+			} else if(a.data.status === '3') {
+				ps2.innerHTML = `二面通过`
+			} else if(a.data.status === '4') {
+				ps2.innerHTML = `二面未通过`
+			} else if(a.data.status === '5') {
+				ps2.innerHTML = `三面通过`
+			} else if(a.data.status === '0') {
+				ps2.innerHTML = `报名成功`
+			}
+		}
+	}
+}
 
 
 // 退出登录
-// let token=localStorage.getItem('userToken');
-// console.log(token);
-// let btn=document.querySelector('.login');
-// btn.addEventListener('click',()=>{
-//     localStorage.clear('userToken');
-//     window.location.assign('./page.html');
-// })
-// if(!token) {
-//     alert('未登录');
-//     window.location.assign('./login.html');
-// }
-
-let ps=document.querySelector('#mes').querySelectorAll('p');
-let message = JSON.parse(localStorage.getItem('message'));
-ps[0].innerHTML=`姓名：${message.username}`;
-ps[1].innerHTML=`QQ号：${message.qq}`;
-ps[2].innerHTML=`手机号：${message.tel}`;
-ps[3].innerHTML=`专业班级：${message.classValue}`;
-ps[4].innerHTML=`方向：${message.dir}`;
-let ps2=document.querySelector('#reg').querySelector('p');
-ps2.innerHTML=`${message.status}`;
-if(message.status === '1') {
-	ps2.innerHTML = `一面通过`
-} else if(message.status === '2') {
-	ps2.innerHTML = `一面未通过`
-} else if(message.status === '3') {
-	ps2.innerHTML = `二面通过`
-} else if(message.status === '4') {
-	ps2.innerHTML = `二面未通过`
-} else if(message.status === '5') {
-	ps2.innerHTML = `三面通过`
-} else if(message.status === '0') {
-	ps2.innerHTML = `报名成功`
+let token=localStorage.getItem('userToken');
+console.log(token);
+let btn=document.querySelector('.login');
+btn.addEventListener('click',()=>{
+    window.location.assign('./index.html');
+	localStorage.clear('userToken');
+})
+if(!token) {
+    alert('未登录');
+    window.location.assign('./page.html');
 }
+
+
+
 
 // 字体动画
 const elts = {
@@ -169,6 +171,3 @@ btn.addEventListener('click',()=>{
     window.location.assign('./login.html')
 })
  */
-
-
-

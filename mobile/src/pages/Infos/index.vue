@@ -15,9 +15,9 @@ export default {
 </script>
 
 <style scoped>
-header{
+/* header{
     width: 100%;
     height:2.6667rem;
     background-color: rgb(67, 37, 47);
-}
+} */
 </style>

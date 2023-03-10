@@ -14,10 +14,10 @@ reg.addEventListener('submit',function(e) {
     let tel=document.querySelector('#tel').value.trim();
     let classValue=document.querySelector('#class').value.trim();
     let dir=document.querySelector('.dir').value;
-    let message={
-        username,qq,tel,classValue,dir,status:'0'
-    };
-    localStorage.setItem('message',JSON.stringify(message));
+    // let message={
+    //     username,qq,tel,classValue,dir,status:'0'
+    // };
+    // localStorage.setItem('message',JSON.stringify(message));
     const xhr=new XMLHttpRequest();
     xhr.open('post','http://localhost:3007/api/reguser');
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')

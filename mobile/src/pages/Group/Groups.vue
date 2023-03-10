@@ -30,8 +30,14 @@ import Android from './../Group/Android.vue'
 import GGG from './../Group/GGG.vue'
 export default {
     name:'About',
-    components:{Ios,Web,Server,GGG,Android}   
+    components:{Ios,Web,Server,GGG,Android},
+    methods:{
+        increment (){
+            this.classList.add('animate__animated', 'animate__zoomOut');
+            }
+        }
 }
+
 </script>
 
 <style scoped>
