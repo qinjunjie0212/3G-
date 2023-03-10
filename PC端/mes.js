@@ -6,17 +6,19 @@ signUpButton.addEventListener('click',() => container.classList.add('right-panel
 signInButton.addEventListener('click',() => container.classList.remove('right-panel-active'))
 
 let xhr=new XMLHttpRequest();
-xhr.open('get','http://localhost:3007/api/userinfo');
-xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
+xhr.open('get','http://localhost:3007/my/userinfo');
+xhr.setRequestHeader('Authorization',localStorage.getItem('userToken'));
 xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 xhr.send();
 xhr.onreadystatechange=function() {
 	if(xhr.readyState==4 && xhr.status==200) {
 		let a=JSON.parse(xhr.response);
-		if(a.message==='获取用户信息失败') {
+		console.log(a.data);
+		if(a.message === '获取用户信息失败') {
 			alert("未登录");
 			window.location.assign('./page.html');
 		}else {
+			console.log(a);
 			let ps=document.querySelector('#mes').querySelectorAll('p');
 			ps[0].innerHTML=`姓名：${a.data.name}`;
 			ps[1].innerHTML=`QQ号：${a.data.qq}`;
@@ -45,7 +47,7 @@ xhr.onreadystatechange=function() {
 
 // 退出登录
 let token=localStorage.getItem('userToken');
-console.log(token);
+// console.log(token);
 let btn=document.querySelector('.login');
 btn.addEventListener('click',()=>{
     window.location.assign('./index.html');
