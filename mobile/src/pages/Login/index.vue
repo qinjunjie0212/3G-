@@ -28,23 +28,25 @@
     }
   },
   methods:{
-/*     loginForm(){
+     loginForm(){
             this.$axios.post('http://localhost:3007/api/login', {
             name: this.loginInfo.name,
             tel: this.loginInfo.tel
           }).then(res=>{
-            alert(res.data.message)
             if(res.data.message === '报名成功') {
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/infos'
             }
-            )},3000)
+            )},1000)
+            }
+            else{
+                alert(res.data.message)
             }
           }).catch(error =>{
             alert('未知错误')
  	  })
-        } */
+        } 
   }
   }
   </script>
