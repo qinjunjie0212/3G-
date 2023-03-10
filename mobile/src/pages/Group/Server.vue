@@ -50,7 +50,7 @@ width: 17rem;
     height: 20rem;
     position: relative;
     top: 12rem;
-    left: 2rem;
+    left: 1.5rem;
     border-radius: 10px; 
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);

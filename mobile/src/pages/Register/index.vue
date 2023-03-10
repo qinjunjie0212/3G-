@@ -43,6 +43,7 @@ export default {
     },
     components:{},
     methods:{
+        // localStorage.setItem('name',this.formData.name)
        registInfo() {
         this.$axios.post('http://127.0.0.1:3007/api/reguser', {
             name: this.formData.username,
@@ -51,13 +52,15 @@ export default {
             banji:this.formData.class,
             dir:this.formData.dir,
           }).then(res=>{
-            alert(res.data.message)
             if(res.data.message === '报名成功') {
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/infos'
             }
-            )},3000)
+            )},1000)
+            }
+            else{
+                alert(res.data.message)
             }
           }).catch(error =>{
             alert('未知错误')

@@ -59,7 +59,8 @@
 #father{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(254, 227, 176);
+    /* background-color: rgb(254, 227, 176); */
+    background-color: rgb(228 179 86);
 }
 #picture{
     position: absolute;
