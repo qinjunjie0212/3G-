@@ -5,189 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>各小组介绍</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="./assets/jieshao.css">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-    @import "https://unpkg.com/normalize.css";
-    @import "https://unpkg.com/open-props/normalize.min.css";
-    @import "https://unpkg.com/open-props/open-props.min.css";
-
-*,
-*:after,
-*:before {
-	box-sizing: border-box;
-}
-
-body {
-	min-height: 100vh;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
-    display: grid;
-    justify-items: center;
-    align-content: start;
-}
-
-
-footer {
-  padding: 2rem;
-  /* font-size: 0.875rem; */
-}
-
-header {
-  min-height: 100vh;
-  display: grid;
-  align-content: center;
-}
-
-h1 {
-  font-weight: 900;
-  font-family: impact;
-  font-size: calc(var(--font-size-fluid-3) * 2.5);
-  line-height: 1;
-}
-
-.sr-only {
-	position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  /* clip: rect(0, 0, 0, 0); */
- 
-}
-
-header {
-  position: relative;
-}
-
-header img {
-  position: absolute;
-  left: 25%;
-  top: 15%;
-  z-index: 1;
-  opacity: 0.65;
-}
-
-h1 {
-  z-index: 2;
-  position: relative;
-}
-
-h1 span:nth-of-type(2) {
-  color: transparent;
-  -webkit-text-stroke: 0.25rem var(--text-1);
-}
-
-section {
-  display: grid;
-  grid-template-columns:
-    auto
-    1fr;
-  align-items: center;
-  min-height: 100vh;
-}
-
-p:first-line {
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-section p {
-  z-index: 2;
-  background: hsl(210 17% 98% / 0.65);
-  padding: 1px;
-  /* backdrop-filter: blur(4px); */
-  font-size: 1.3em;
-}
-
-@media(prefers-color-scheme: dark) {
-  section p {
-    background: hsl(210 11% 15% / 0.65);
-  }
-}
-
-section img {
-  grid-column: 1;
-  width: 90%;
-  height: 30%;
-  max-width: 20vw;
-  clip-path: polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
-  scale: 1.5;
-}
-
-section:nth-of-type(even) {
-  grid-template-columns:
-    1fr
-    auto;
-  grid-auto-flow: dense;
-}
-section:nth-of-type(even) img {
-  grid-column: 2;
-}
-section:nth-of-type(even) p {
-  grid-column: 1;
-}
-
-section p {
-  position: sticky;
-  bottom: 40%;
-}
-
-@keyframes item-reveal {
-  0% {
-    opacity: 0;
-    translate: var(--x, 0) var(--y, 0);
-  }
-}
-
-.ring-wrapper {
-  --char-count: 19;
-  --inner-angle: calc((360 / var(--char-count, 19)) * 1deg);
-  --character-width: 1.0;
-  --radius: calc((var(--character-width, 1.0) / 0.32469946920468346) * -1ch);
-  --font-size: 1.5rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: calc((var(--character-width, 1.0) / 0.32469946920468346) * 3.5ch);
-  width: calc((var(--character-width, 1.0) / 0.32469946920468346) * 3.5ch);
-  translate: 0% 0%;
-  display: grid;
-  place-items: center;
-  z-index: 10;
-  border: calc(var(--character-width) * 2rem) solid var(--surface-2);
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.ring {
-  font-family: monospace;
-  text-transform: uppercase;
-  font-size: calc(var(--font-size, 1) * 1rem);
-  animation: rotation 6s both linear;
-  position: relative;
-  animation-timeline: scroll(root);
-}
-.char {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform:
-    translate(-50%, -50%)
-    rotate(calc(var(--inner-angle) * var(--char-index)))
-    translateY(var(--radius));
-}
-@keyframes rotation {
-  to {
-    rotate: 720deg;
-  }
-}
-</style>
 <body>
     <header>
-        <img src="./logo.png" alt="" width="400px" height="400px" />
+        <img src="./images/logo.png" alt="" width="400px" height="400px" />
         <h1>
           <span aria-hidden="true">西邮</span>
           <span aria-hidde="true">Mobile</span>
@@ -196,26 +19,26 @@ section p {
       </header>
       <main>
         <section>
-          <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.3pqELvPqSh9qu4ImSAAcCAHaFY?pid=ImgDet&rs=1" alt="" >
+          <img src="./images/ios.png" alt="" >
           <p>iOS致力基于iOS系统的移动应用开发，主要使用 Objective-C 语言进行开发。
             有着先进的iOS开发设备，积极活跃的开发团队，团队成员互相合作，共同进步，积极参加各类竞赛。也正因如此，近几年来我们都取得了非常可观的成绩，
             如今已经有玩转西邮，西邮成绩，西邮图书馆，近健步行等多个APP上线，除此之外我们的就业率更是达到了百分之百，并且都是就职于腾讯，百度，爱奇艺，
             搜狐等大型互联网公司。怀揣着对iOS开发的无限热情，我们将继续努力，共同进步。</p>
         </section>
         <section>
-          <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.8QGnCxVjJ3pUwfCP-LLWgQHaE7?pid=ImgDet&rs=1" alt="" width="50px" height="50px">
+          <img src="./images/Android.png" alt="" width="50px" height="50px">
           <p>Android组
             利用安卓系统的开放性，进行了各种各样的移动应用开发，是实验室中成果最多、规模最大的开发组。Android开发组多次参加多种大赛，
             并获得了不错的成绩！应用《酷步》，曾参加全国级大赛并获奖，《西邮图书借阅系统》率先发布，
             《iXiyou》整合了多种与西邮校园相关的功能，方便了西邮学生。Android开发组已走出了多位优秀的学长、学姐，并就职于国内知名企业</p>
         </section>
         <section>
-          <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.RDOVTH0Q5Tvx8uGfbRUWxwHaHa?pid=ImgDet&rs=1" alt="" width="200px" height="200px">
+          <img src="./images/server.png" alt="" width="200px" height="200px">
           <p>后端开发，也可以称为服务器端开发，是对用户看不到的程序后端部分的开发，负责处理前端的请求，进行逻辑处理和数据交互，涉及到mysql、redis、
             后台语言及相关框架等相关知识。后端开发需要考虑底层业务逻辑的实现、数据的保存与读取、平台的稳定性和性能等。</p>
         </section>
         <section>
-          <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.VkyAGb6fJiNUgzpFwh_d7QAAAA?pid=ImgDet&rs=1" alt="" width="200px" height="200px">
+          <img src="./images/web.png" alt="" width="200px" height="200px">
           <p>Web组致力于以HTML/HTML5、CSS/CSS3、Less、Javascript、jQuery、Ajax为主的Web前端开发，和以Node.js、PHP、JSP、ASP.NET为主的后台开发。
             如今已上线项目有手机版网站《西邮图书馆》、《高校成绩》，校园综合网站《MyCollege》（包含有易校园（校园二手市场）、论坛、资料库、订餐吧、
             PC浏览器版成绩单和图书查询、学生会、实验室等模块）正在进行中。</p>

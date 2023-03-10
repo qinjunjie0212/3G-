@@ -17,13 +17,92 @@ body,html{
     height: 100%;
     margin:  0 auto;
 }
-header {
+/* .logo {
     position: absolute;
-    left: 10%;
-    top: 36%;
+    top: 15px;
+    left: 15px;
+}
+.logo h1 a {
+    display: block;
     width: 163px;
     height: 163px;
     background: url(../logo.png) no-repeat;
+    opacity: 0.7;
+} */
+.leaves {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+.leaves .set {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.leaves .set div {
+    position: absolute;
+    display: block;
+}
+.leaves .set div:nth-child(1) {
+    left: 20%;
+    animation: animate 20s linear infinite;
+}
+.leaves .set div:nth-child(2) {
+    left: 50%;
+    animation: animate 20s linear infinite;
+}
+.leaves .set div:nth-child(3) {
+    left: 70%;
+    animation: animate 12s linear infinite;
+}
+.leaves .set div:nth-child(4) {
+    left: 5%;
+    animation: animate 15s linear infinite;
+}
+.leaves .set div:nth-child(5) {
+    left: 85%;
+    animation: animate 18s linear infinite;
+}
+.leaves .set div:nth-child(6) {
+    left: 90%;
+    animation: animate 12s linear infinite;
+}
+.leaves .set div:nth-child(7) {
+    left: 15%;
+    animation: animate 14s linear infinite;
+}
+.leaves .set div:nth-child(8) {
+    left: 60%;
+    animation: animate 15s linear infinite;
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }10% {
+        opacity: 1;
+    }20% {
+        transform: translateX(-20px) rotate(45deg);
+    }40% {
+        transform: translateX(-20px) rotate(90deg);
+    }60% {
+        transform: translateX(20px) rotate(180deg);
+    }80% {
+        transform: translateX(-20px) rotate(45deg);
+    }100% {
+        top: 110%;
+        transform: translateX(20px) rotate(225deg);
+    }
 }
 h1{
     margin: 0.2rem;
@@ -97,7 +176,7 @@ a{
 
 .div-container button{
     padding: 0.4rem 1rem;
-    background: #417dff;
+    background: #d8ad88;
     color: white;
     border: 1px solid #fff;
     outline: none;
@@ -151,7 +230,7 @@ button.ghost:active{
 }
 
 .overlay{
-    background: #417dff;
+    background: #d8ad88;
     width: 200%;
     height: 100%;
     position: relative;
@@ -214,44 +293,6 @@ button.ghost:active{
 #reg p {
     text-align: center;
 }
-/* Explanation in JS tab */
-
-/* Cool font from Google Fonts! */
-@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
-
-.a {
-    position: absolute;
-    top: -40px;
-    left: 0;
-}
-#container1 {
-	/* Center the text in the viewport. */
-	position: absolute;
-	margin: auto;
-	width: 100vw;
-	height: 80pt;
-	top: 0;
-	bottom: 0;
-	
-	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
-	filter: url(#threshold) blur(0.6px);
-}
-
-/* Your average text styling */
-#text1, #text2 {
-	position: absolute;
-	width: 100%;
-	/* display: inline-block; */
-    display: flex;
-    justify-content: center;
-	
-	font-family: 'Raleway', sans-serif;
-	font-size: 80pt;
-	
-	text-align: center;
-	
-	user-select: none;
-}
 .login {
     position: absolute;
     right: 8rem;
@@ -263,5 +304,5 @@ button.ghost:active{
     outline: none;
     cursor: pointer;
     color: #fff;
-    background: -webkit-linear-gradient(left,#417dff,#25bbd2);
+    background: -webkit-linear-gradient(left,#d8ad88,#ebbd95);
 }
