@@ -126,5 +126,5 @@ btn2.addEventListener('click', function(e) {
 
 const btn3 = document.querySelector('.read3')
 btn3.addEventListener('click', function(e) {
-    window.location.href = ('./jieye.html')
+    window.location.href = ('./jiuye.html')
 })
