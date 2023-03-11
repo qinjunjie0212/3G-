@@ -4,167 +4,180 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>各小组介绍</title>
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="./assets/jieshao.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-</head>
-<style>
-
-:root{
-  --background-dark: #2d3548;
-  --text-light: rgba(255,255,255,0.6);
-  --text-lighter: rgba(255,255,255,0.9);
-  --spacing-s: 8px;
-  --spacing-m: 16px;
-  --spacing-l: 24px;
-  --spacing-xl: 32px;
-  --spacing-xxl: 64px;
-  --width-container: 1200px;
-}
-
-*{
-  border: 0;
+    <title>Document</title>
+    <style>
+        *,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html{
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+html {
+  font-size: 62.5%;
 }
 
-body{
-  height: 100%;
+body {
+  /* --background-color: hsl(180, 20%, 90%); */
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+
+  min-height: 100vh;
+  padding: 2rem;
+
+  color: hsla(0, 0%, 0%, .6);
+  /* background: var(--background-color); */
+  text-align: center;
 }
 
-.hero-section{
-  align-items: flex-start;
-  background-image: linear-gradient(15deg, #dedfb9 0%, #d9d9af 150%);
+h1 {
+  font-size: 3.2rem;
+  padding-top: 2rem;
+}
+
+h1+p {
+  font-size: 1.8rem;
+  padding: 2rem 0 3rem;
+}
+
+.main {
   display: flex;
-  min-height: 100%;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: var(--spacing-xxl) var(--spacing-l);
+  align-items: center;
 }
 
-.card-grid{
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: var(--spacing-l);
-  grid-row-gap: var(--spacing-l);
-  max-width: var(--width-container);
-  width: 100%;
+.wrap {
+  margin: 2rem;
+
+  transform-style: preserve-3d;
+  transform: perspective(100rem);
+
+  cursor: pointer;
 }
 
-@media(min-width: 540px){
-  .card-grid{
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
+.container {
+  --rX: 0;
+  --rY: 0;
+  --bX: 50%;
+  --bY: 80%;
 
-@media(min-width: 960px){
-  .card-grid{
-    grid-template-columns: repeat(4, 1fr); 
-  }
-}
+  width: 30rem;
+  height: 36rem;
+  border: 1px solid var(--background-color);
+  border-radius: 1.6rem;
+  padding: 4rem;
 
-.card{
-  list-style: none;
+  display: flex;
+  align-items: flex-end;
+
   position: relative;
+  transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+
+  background: linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1)), url("https://images.unsplash.com/photo-1559113513-d5e09c78b9dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
+  background-position: var(--bX) var(--bY);
+  background-size: 40rem auto;
+  box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+
+  transition: transform .6s 1s;
 }
 
-.card:before{
-  content: '';
-  display: block;
-  padding-bottom: 150%;
-  width: 100%;
-}
+.container::before,
+.container::after {
+  content: "";
 
-.card__background{
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--spacing-l);
-  bottom: 0;
-  filter: brightness(0.75) saturate(1.2) contrast(0.85);
-  left: 0;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #fff;
+
   position: absolute;
-  right: 0;
-  top: 0;
-  transform-origin: center;
-  transition: 
-    filter 200ms linear,
-    transform 200ms linear;
+  z-index: 2;
+
+  opacity: .3;
+  transition: .3s;
 }
 
-.card:hover .card__background{
-  transform: scale(1.05) translateZ(0);
+.container::before {
+  top: 2rem;
+  right: 2rem;
+
+  border-bottom-width: 0;
+  border-left-width: 0;
 }
 
-.card-grid:hover > .card:not(:hover) .card__background{
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+.container::after {
+  bottom: 2rem;
+  left: 2rem;
+
+  border-top-width: 0;
+  border-right-width: 0;
 }
 
-.card__content{
-  left: 0;
-  padding: var(--spacing-l);
-  position: absolute;
-  top: 0;
+.container--active {
+  transition: none;
 }
 
-.card__category{
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: var(--spacing-s);
-  text-transform: uppercase;
+.container--2 {
+  filter: hue-rotate(80deg) saturate(140%);
 }
 
-.card__heading{
-  color: var(--text-lighter);
-  font-size: 1.9rem;
-  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
-  line-height: 1.4;
-  word-spacing: 100vw;
+.container--3 {
+  filter: hue-rotate(160deg) saturate(140%);
 }
 
+.container p {
+  color: hsla(0, 0%, 100%, .6);
+  font-size: 2.2rem;
+}
 
+.wrap:hover .container::before,
+.wrap:hover .container::after {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+}
 
-</style>
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, .6);
+  font-size: 1.6rem;
+}
+    </style>
+</head>
 <body>
+    <h1>XiYou Mobile</h1>
+<p>移动开发实验室介绍</p>
 
-<section class="hero-section">
-  <div class="card-grid">
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(../img/ios.png)"></div>
-      <div class="card__content">
-        <p class="card__category">XiYou • Mobile</p>
-        <h4 class="card__heading">iOS</h4>
-      </div>
-    </a>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(../img/server.png)"></div>
-      <div class="card__content">
-        <p class="card__category">XiYou • Mobile</p>
-        <h4 class="card__heading">server</h4>
-      </div>
-    </a>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(../img/web.png)"></div>
-      <div class="card__content">
-        <p class="card__category">XiYou • Mobile</p>
-        <h4 class="card__heading">web</h4>
-      </div>
-    </li>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(../img/Android.png)"></div>
-      <div class="card__content">
-        <p class="card__category">XiYou • Mobile</p>
-        <h4 class="card__heading">Android</h4>
-      </div>
-    </a>
-  <div>
+<section class="main">
+
+  <div class="wrap wrap--1">
+    <div class="container container--1">
+      <p>01. iOS</p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--2">
+    <div class="container container--2">
+      <p>02. web</p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--3">
+    <div class="container container--3">
+      <p>03. Android</p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--2">
+    <div class="container container--2">
+      <p>04. serve</p>
+    </div>
+  </div>
+
 </section>
-        
+
+
 </body>
 </html>
