@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/about">      <img src="./../../assets/img/右箭头.png" alt="" class="paw">
+    <router-link replace to="/about">      <img src="./../../assets/img/右箭头.png" alt="" class="paw">
 </router-link>
 <br>
 <br>
@@ -14,9 +14,9 @@
         <img src="../../assets/img/圆.png" alt="" class="circle4">
         <img src="../../assets/img/浅灰树.png" alt="" class="tree">
         <img src="../../assets/img/太阳.png" alt="" class="sun">
-    <router-link to="/infos/info" class="btn1 btn">个人信息</router-link>
+    <router-link  replace to="/infos/info" class="btn1 btn">个人信息</router-link>
     <br><br>
-    <router-link to="/infos/state" class="btn2 btn">面试状态</router-link><button></button>
+    <router-link   replace to="/infos/state" class="btn2 btn">面试状态</router-link><button></button>
   </div>
 </template>
 <script>

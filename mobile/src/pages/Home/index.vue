@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/about">
+    <router-link replace to="/about">
 
     <img src="./../../assets/img/背景.jpeg" alt="">
         <img src="./../../assets/img/三角.png" alt="">

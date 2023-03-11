@@ -1,6 +1,6 @@
 <template>
     <div>
-      <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
+      <router-link replace class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
       <!-- <router-link to="/About">返回</router-link> -->
       <h1>ios</h1>
       <div class="box glass-container special animate__animated animate__backInLeft">

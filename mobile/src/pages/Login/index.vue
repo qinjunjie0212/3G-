@@ -14,7 +14,7 @@
             <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Login_input" v-model="loginInfo.tel"></div><br>
             <a class="btn" @click="loginForm">登录</a>
             <!-- <router-link to="/Infos" class="btn">登录</router-link> -->
-            <router-link to="/Register" class="btn">我要报名</router-link>
+            <router-link  replace to="/Register" class="btn">我要报名</router-link>
         </form>
    </div>
   </template>

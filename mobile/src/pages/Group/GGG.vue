@@ -1,6 +1,6 @@
 <template>
     <div>
-      <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
+      <router-link replace class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
       <h1>3G</h1>
       <div @click="intrShow" class="onea com">3G简介</div>
       <div @click="intrJob" class="twob com">就业介绍</div>

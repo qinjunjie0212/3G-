@@ -1,23 +1,18 @@
 <template>
   <div class="common">
     <div class="firstLine">FAVOURABLY RECEIVE</div>
-        <!-- <img class="one" src="./../../assets/img/灰色圆点.png" alt="">
-        <img class="two" src="./../../assets/img/浅灰树.png" alt="">
-        <img class="three" src="./../../assets/img/灰色圆点.png" alt="">
-        <img class="four" src="./../../assets/img/灰色圆点.png" alt="">
-        <img class="five" src="./../../assets/img/灰色圆点.png" alt=""> -->
-        <router-link to="/about/web" class="kind animate__animated animate__zoomIn" @click.native="increment"> <img class="web"
+        <router-link replace to="/about/web" class="kind animate__animated animate__zoomIn"> <img class="web"
                 src="./../../assets/img/恐龙3.png" alt=""><img src="./../../assets/img/前端.png" class="webText" alt=""></router-link>
-        <router-link to="/about/ios" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ios"
+        <router-link replace to="/about/ios" class="kind animate__animated animate__zoomIn"><img class="ios"
                 src="./../../assets/img/恐龙1.png" alt=""><img src="./../../assets/img/苹果.png" alt="" class="iosText"></router-link>
-        <router-link to="/about/server" href="#" class="kind animate__animated animate__zoomIn" @click="increment"><img class="server"
+        <router-link replace to="/about/server" href="#" class="kind animate__animated animate__zoomIn"><img class="server"
                 src="./../../assets/img/恐龙5.png" alt=""><img src="./../../assets/img/后台.png" class="serverText" alt=""></router-link>
-        <router-link to="/about/android" href="#" class="kind animate__animated animate__zoomIn" @click="increment"><img class="android"
+        <router-link replace to="/about/android" href="#" class="kind animate__animated animate__zoomIn"><img class="android"
                 src="./../../assets/img/恐龙2.png" alt=""><img src="./../../assets/img/安卓.png" class="androidText" alt=""></router-link>
         
-                <router-link to="/about/3g" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ggg"
+                <router-link replace to="/about/3g" class="kind animate__animated animate__zoomIn"><img class="ggg"
                 src="./../../assets/img/恐龙6.png" alt=""><img src="./../../assets/img/三G.png" class="sangText" alt=""></router-link>
-                <router-link to="/login" class="next"><img src="./../../assets/img/右箭头.png" alt=""></router-link>
+                <router-link replace to="/login" class="next"><img src="./../../assets/img/右箭头.png" alt=""></router-link>
                 <router-view></router-view>
     </div>
 </template>
@@ -32,80 +27,12 @@ export default {
     name:'About',
     components:{Ios,Web,Server,GGG,Android},
     methods:{
-        increment (){
-            // this.classList.add('animate__animated', 'animate__zoomOut');
-            // console.log('aaa')
-            }
         }
 }
 
 </script>
 
 <style scoped>
-/* body{
-    background-color: #e8e8e8;
-}
-.next{
-    position: absolute;
-    width: 2.6667rem;
-    height: 2.6667rem;
-    top: 32.5rem;
-    right: 1.5rem;
-}
-.firstLine {
-    font-size: 2.32rem;
-    font-weight: 900;
-    width: 16.533rem;
-    position: absolute;
-    z-index: 1;
-    top: 2.2667rem;
-    left: 1.2667rem;
-}
-
-.common {
-    position: relative
-}
-
-.one {
-    position: absolute;
-    left: -0.8667rem;
-    top: -0.2rem;
-    width: 9.8rem;
-    height: 13.3333rem;
-}
-
-.two {
-    position: absolute;
-    width: 17.5333rem;
-    height: 21.5333rem;
-    left: 9.2667rem;
-    top: 9.2667rem;
-}
-
-.three {
-    position: absolute;
-    left: -5.8667rem;
-    top: 23.8rem;
-    width: 13.8rem;
-    height: 19.3333rem;
-}
-
-.four {
-    position: absolute;
-    left: 6.1333rem;
-    top: 43.8rem;
-    width: 15.8rem;
-    height: 21.3333rem;
-}
-
-.five {
-    position: absolute;
-    left: 18.1333rem;
-    top: -12.2rem;
-    width: 15.8rem;
-    height: 21.3333rem;
-}
- */
  .androidText{
     top: 18rem;
     left: 10.5rem;

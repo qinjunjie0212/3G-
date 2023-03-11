@@ -1,6 +1,6 @@
 <template>
     <div>
-      <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
+      <router-link replace class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
       <h1>Server</h1>
       <div class="box glass-container animate__animated animate__backInLeft">
         <div class="introduce">后端开发，也可以称为服务器端开发，是对用户看不到的程序后端部分的开发，负责处理前端的请求，进行逻辑处理和数据交互，涉及到mysql、redis、 后台语言及相关框架等相关知识。后端开发需要考虑底层业务逻辑的实现、数据的保存与读取、平台的稳定性和性能等。</div>
