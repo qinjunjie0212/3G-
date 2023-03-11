@@ -17,7 +17,7 @@ const name = joi.string().pattern(/^[\u4E00-\u9FA5]{2,4}$/).required().messages(
 // const name = joi.string().alphanum().min(1).max(10).required()
 
 // 电话号码的验证规则
-const tel = joi.string().pattern(/^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/).required().messages({
+const tel = joi.string().pattern(/^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/).required().messages({
     'string.pattern.base': '请输入正确的电话号码',
     'string.empty': '电话号码不能为空'
   })

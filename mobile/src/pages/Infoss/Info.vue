@@ -1,22 +1,27 @@
 <template>
   <div class="main">
-    <router-link to="/infos">
+    <router-link to="/infos" replace>
       <img src="./../../assets/img/右箭头.png" alt="" class="paw">
 
     </router-link>
         <br>
         <h1>Personal Information</h1>
-            <div class="tittles">  姓名/Name:</div>
-            <div class="tittles">  手机号/Phone :</div>
-            <div class="tittles">  QQ号/QQnumber :</div>
-            <div class="tittles">  专业班级/Class :</div>
-            <div class="tittles">  意向/Direction :</div>
-        <br>
-        <br>
-        <br>
-        <img src="./../../assets/img/3G恐龙.png" alt="" class="_3G">
+            <div class="tittles">  姓名Name:</div>
+            <div class="tittles">  手机号Phone :</div>
+            <div class="tittles">  QQ :</div>
+            <div class="tittles">  专业班级Class :</div>
+            <div class="tittles">  意向Direction :</div>
+        <!-- <br> -->
+        <!-- <br> -->
+        <!-- <br> -->
+        <img src="./../../assets/img/恐龙5.png" alt="" class="dinosaur">
         <img src="./../../assets/img/太阳.png" alt="" class="sun">
-        <img src="./../../assets/img/灰色圆点.png" alt="" class="crl">
+        <img src="./../../assets/img/浅灰圆.png" alt="" class="circle1">
+        <img src="./../../assets/img/浅灰圆.png" alt="" class="circle2">
+        <img src="./../../assets/img/浅灰圆.png" alt="" class="circle3">
+        <img src="./../../assets/img/浅灰圆.png" alt="" class="circle4">
+        <img src="./../../assets/img/浅灰圆.png" alt="" class="circle5">
+        <img src="./../../assets/img/浅灰圆.png" alt="" class="circle6">
   </div>
 </template>
 
@@ -40,14 +45,15 @@ name:'Info'
     text-align: left;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    margin-top: 1.5rem;
 }
-._3G{
-    z-index: -11;
+.dinosaur{
+    z-index: 0;
     position: absolute;
-    bottom: 0;
-    left:50%;
-    width: 20rem;
-    margin-left: -10rem;
+    bottom: 3.2rem;
+    left:56%;
+    width: 10rem;
+    margin-left: -2rem;
 }
 .sun{
     z-index: -11;
@@ -55,6 +61,7 @@ name:'Info'
     top: 3rem;
     width: 10rem;
     left: 10rem;
+    opacity: 0.6;
 }
 .paw{
   transform: rotateY(180deg);
@@ -63,15 +70,53 @@ name:'Info'
     width: 3rem;
     left: 1rem;
 }
-.crl{
+.circle1{
     position: absolute;
-    bottom: 0;
-    z-index: -22;
-    width: 15rem;
+    bottom: 5.3333rem;
+    z-index: -10;
+    width: 9rem;
     left: -3.5rem;
-    transform: rotateX(180deg);
+}
+.circle2{
+    position: absolute;
+    bottom: 17rem;
+    z-index: -10;
+    width: 2.4rem;
+    left: 0rem;
+}
+.circle3{
+    position: absolute;
+    bottom: 0rem;
+    z-index: -10;
+    width: 4rem;
+    left: 0rem;
+}
+.circle4{
+    position: absolute;
+    bottom: 3.3333rem;
+    z-index: -10;
+    width: 2rem;
+    left: 6.5rem;
+}
+.circle5{
+    position: absolute;
+    bottom: 7.8rem;
+    z-index: -10;
+    width: 3.5rem;
+    left: 7.6rem;
+}
+.circle6{
+    position: absolute;
+    bottom: -6rem;
+    z-index: -10;
+    width: 12rem;
+    right: -3rem;
+    z-index: -5;
+    opacity: 0.8;
 }
 h1{
+  /* position: absolute; */
+  /* top: 2.1333rem; */
   text-align: center;
 }
 </style>

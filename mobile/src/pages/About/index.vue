@@ -20,55 +20,13 @@ export default {
 </script>
 
 <style scoped>
-.back{
-  position: absolute;
-  z-index: 999;
-}
 body{
     background-color:#f8f8f8;
 }
 .common {
     position: relative
 }
-.last img{
-  width: 2.3333rem;
-    height: 2.3333rem;
-    position: absolute;
-    left: 17px;
-    top: 1rem;
-}
-h1{
-  position: absolute;
-    top: 5rem;
-    left: 2.2rem;
-}
-.introduce{
-  width: 16.333rem;
-    font-size: 19px;
-    font-weight: 600;
-    position: absolute;
-    top: 0.9rem;
-    left: 0.4rem;
-    letter-spacing: 0.01rem;
-    line-height: 1.5rem;
-    color: slategrey;
-    text-indent: 0.5rem;
-}
-.glass-container{
-width: 17rem;
-    height: 20rem;
-    position: relative;
-    top: 12rem;
-    left: 2rem;
-    border-radius: 10px; 
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    background-color: rgba(220,219,220, 0.098);
-    box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
-    border: 2px rgba(255,255,255,0.4) solid;
-    border-bottom: 2px rgba(40,40,40,0.35) solid;
-    border-right: 2px rgba(40,40,40,0.35) solid;
-}
+
 .one {
     position: absolute;
     left: -0.8667rem;

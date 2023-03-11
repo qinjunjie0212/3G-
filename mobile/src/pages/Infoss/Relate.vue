@@ -1,22 +1,21 @@
 <template>
   <div>
-    <router-link to="/about">      <img src="./../../assets/img/右箭头.png" alt="" class="paw">
+    <router-link replace to="/about">      <img src="./../../assets/img/右箭头.png" alt="" class="paw">
 </router-link>
 <br>
 <br>
 <br>
-    <h1>Personal Page</h1>
-    <img src="./../../assets/img/恐龙5.png" alt="" class="long">
-
+    <span class="title">Personal Page</span>
+        <!-- <img src="./../../assets/img/恐龙2.png" alt="" class="dinosaur"> -->
         <img src="../../assets/img/圆.png" alt="" class="circle1">
         <img src="../../assets/img/圆.png" alt="" class="circle2">
         <img src="../../assets/img/圆.png" alt="" class="circle3">
         <img src="../../assets/img/圆.png" alt="" class="circle4">
         <img src="../../assets/img/浅灰树.png" alt="" class="tree">
         <img src="../../assets/img/太阳.png" alt="" class="sun">
-    <router-link to="/infos/info" class="btn1 btn">个人信息</router-link>
-    <br><br>
-    <router-link to="/infos/state" class="btn2 btn">面试状态</router-link><button></button>
+    <router-link to="/infos/info" class="btn btn1">个人信息</router-link>
+    <!-- <br><br> -->
+    <router-link to="/infos/state" class="btn">面试状态</router-link><button></button>
   </div>
 </template>
 <script>
@@ -28,66 +27,68 @@ components:{}
 
 <style scoped>
 .btn {
-    position: absolute;
-    left: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 10rem;
-    height: 2.3rem;
+    width: 8rem;
+    height: 3rem;
     text-decoration: none;
-    border: solid 5px rgb(121, 113, 113);
+    border: solid 1.5px rgb(110, 110, 110);
     border-radius: 40px;
     background: #f4cf47;
     opacity: 0.8;
+    /* margin-bottom: 1.2rem; */
+    margin-left: 5.3333rem;
     color: black;
     font-size: .8rem;
+    margin-top: 4.3333rem;
+    /* font-weight: 550; */
 }
 .btn2{
   margin-top: 10rem;
 }
 .btn1{
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 .circle1{
     position: absolute;
-    width: 7rem;
-    right: -2.6667rem;
-    bottom: 5rem;
+    width: 8rem;
+    left: -0.6667rem;
+    bottom: 17rem;
     opacity: 0.6;
     z-index: -10;
 }
 .circle2{
     position: absolute;
-    width: 4rem;
-    left: 8rem;
-    bottom: 4rem;
+    width: 5rem;
+    left: 6rem;
+    bottom: 10rem;
     opacity: 0.6;
     z-index: -10;
 }
 .circle3{
     position: absolute;
-    width: 3.3rem;
-    right: 1rem;
-    top: 10.5rem;
+    width: 3.8rem;
+    left: 1.5rem;
+    bottom: 6rem;
     opacity: 0.4;
     z-index: -10;
 }
 .circle4{
     position: absolute;
     width: 3rem;
-    left: 2.5rem;
-    bottom: 0;
-    opacity: 0.6;
+    left: -0.5rem;
+    bottom: 12rem;
+    opacity: 0.4;
 }
 .tree{
     position: absolute;
-    width: 18.3333rem;
-    right: 9.8667rem;
-    top: 6rem;
-    opacity: 0.6;
-    z-index: -999;
+    width: 18.1333rem;
+    right: -5rem;
+    top: 9rem;
+    opacity: 0.4;
+    z-index: -10;
 }
 
 .sun {
@@ -98,23 +99,24 @@ components:{}
     opacity: 0.8;
 }
 
-.paw{
-  transform: rotateY(180deg);
-    position: fixed;
-    top: 1rem;
-    width: 3rem;
-    left: 1rem;
-}
 h1{
   font-size: 2rem;
   text-align: center;
 }
-.long{
+
+.dinosaur {
   position: fixed;
-  right: 0;
-  bottom: -5rem;
-  width: 45rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  width: 8rem;
 }
 
-
+.title {
+    position: absolute;
+    top: 5.5rem;
+    left: 2.5rem;
+    font-weight: bold;
+    font-size: 2.2rem;
+    z-index: 10;
+}
 </style>
