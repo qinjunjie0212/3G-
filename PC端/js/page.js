@@ -19,7 +19,7 @@ reg.addEventListener('submit',function(e) {
     // };
     // localStorage.setItem('message',JSON.stringify(message));
     const xhr=new XMLHttpRequest();
-    xhr.open('post','http://localhost:3007/api/reguser');
+    xhr.open('post','43.138.89.150:5000/api/reguser');
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
     xhr.send(`name=${username}&tel=${tel}&qq=${qq}&banji=${classValue}&dir=${dir}`);
     xhr.onreadystatechange=function() {
@@ -62,7 +62,7 @@ login.addEventListener('submit',function(e) {
     let tel2=document.querySelector('#tel2').value.trim();
     console.log(username2,tel2);
     const xhr=new XMLHttpRequest();
-    xhr.open('post','http://localhost:3007/api/login');
+    xhr.open('post','43.138.89.150:5000/api/login');
     xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     xhr.send(`name=${username2}&tel=${tel2}`);
