@@ -88,7 +88,7 @@ export default {
     border-bottom: .04rem solid black;
     opacity: 0.8;
     background-color: transparent;
-    margin-left: 1.3333rem;
+    margin-left: -0.3333rem;
 }
 .Register_input:focus {
     outline: none;
@@ -117,7 +117,7 @@ export default {
     background: #f4cf47;
     opacity: 0.8;
     margin-bottom: 1.2rem;
-    margin-left: 2.2667rem;
+    margin-left: 5.2667rem;
     color: black;
     font-size: .8rem;
 }
@@ -130,7 +130,7 @@ select {
     opacity: 0.8;
     background-color: transparent;
     opacity: 0.8;
-    margin-left: -2.3rem;
+    margin-left: -3.3rem;
 }
 select:focus {
     outline: none;
@@ -187,6 +187,7 @@ select option {
     top: -9rem;
     left: -2.1333rem;
     opacity: 0.8;
+    z-index: 0;
 }
 
 .title {
@@ -195,6 +196,7 @@ select option {
     left: 2.8rem;
     font-weight: bold;
     font-size: 2.5rem;
+    z-index: 10;
 }
 
 .last img{

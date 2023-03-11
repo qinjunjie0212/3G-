@@ -124,10 +124,10 @@ export default {
 }
 
 .next img{
-    width: 4.3333rem;
-    height: 4.3333rem;
+    width: 3rem;
+    /* height: 4.3333rem; */
     position: absolute;
-    right: 17px;
-    top: 31rem;
+    right: 1.5rem;
+    top: 31.5rem;
 }
 </style>
