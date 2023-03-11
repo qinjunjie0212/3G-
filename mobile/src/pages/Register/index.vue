@@ -38,14 +38,19 @@ export default {
     name:'Register',
     data(){
         return {
-            formData:{}
+            formData:{
+                username:'',
+                tel:'',
+                qq:'',
+                class:''
+            }
         }
     },
     components:{},
     methods:{
         // localStorage.setItem('name',this.formData.name)
        registInfo() {
-        this.$axios.post('http://127.0.0.1:3007/api/reguser', {
+        this.$axios.post('http://43.138.89.150:5000/api/reguser', {
             name: this.formData.username,
             tel: this.formData.tel,
             qq:this.formData.qq,
