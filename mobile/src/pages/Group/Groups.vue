@@ -7,16 +7,16 @@
         <img class="four" src="./../../assets/img/灰色圆点.png" alt="">
         <img class="five" src="./../../assets/img/灰色圆点.png" alt=""> -->
         <router-link to="/about/web" class="kind animate__animated animate__zoomIn" @click.native="increment"> <img class="web"
-                src="./../../assets/img/web.png" alt=""></router-link>
+                src="./../../assets/img/恐龙3.png" alt=""><img src="./../../assets/img/前端.png" class="webText" alt=""></router-link>
         <router-link to="/about/ios" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ios"
-                src="./../../assets/img/ios.png" alt=""></router-link>
+                src="./../../assets/img/恐龙1.png" alt=""><img src="./../../assets/img/苹果.png" alt="" class="iosText"></router-link>
         <router-link to="/about/server" href="#" class="kind animate__animated animate__zoomIn" @click="increment"><img class="server"
-                src="./../../assets/img/server.png" alt=""></router-link>
+                src="./../../assets/img/恐龙5.png" alt=""><img src="./../../assets/img/后台.png" class="serverText" alt=""></router-link>
         <router-link to="/about/android" href="#" class="kind animate__animated animate__zoomIn" @click="increment"><img class="android"
-                src="./../../assets/img/Android.png" alt=""></router-link>
+                src="./../../assets/img/恐龙2.png" alt=""><img src="./../../assets/img/安卓.png" class="androidText" alt=""></router-link>
         
                 <router-link to="/about/3g" class="kind animate__animated animate__zoomIn" @click="increment"><img class="ggg"
-                src="./../../assets/img/3G恐龙.png" alt=""></router-link>
+                src="./../../assets/img/恐龙6.png" alt=""><img src="./../../assets/img/三G.png" class="sangText" alt=""></router-link>
                 <router-link to="/login" class="next"><img src="./../../assets/img/右箭头.png" alt=""></router-link>
                 <router-view></router-view>
     </div>
@@ -106,6 +106,46 @@ export default {
     height: 21.3333rem;
 }
  */
+ .androidText{
+    top: 18rem;
+    left: 10.5rem;
+    z-index: 1;
+    width: 9rem;
+    position: absolute;
+    height: 2rem;
+}
+ .serverText{
+    top: 27rem;
+    left: 11rem;
+    z-index: 1;
+    width: 8rem;
+    position: absolute;
+    height: 2rem;
+}
+.sangText{
+    top: 31.5rem;
+    left: 3.3rem;
+    z-index: 1;
+    width: 4rem;
+    position: absolute;
+    height: 2rem;
+}
+ .webText{
+    top: 21.5rem;
+    left: 2rem;
+    width: 5rem;
+    height: 2rem;
+    position: absolute;
+}
+
+.iosText{
+    top: 12.1rem;
+    left: 2.5rem;
+    width: 5rem;
+    height: 2rem;
+    position: absolute;
+}
+
  .firstLine {
     font-size: 2.32rem;
     font-weight: 900;
@@ -134,10 +174,10 @@ export default {
 
 .server {
     position: absolute;
-    left: 9.2667rem;
-    top: 25.2667rem;
-    width: 10.3333rem;
-    height: 5.3333rem;
+    left: 8.2667rem;
+    top: 24.2667rem;
+    width: 11.3333rem;
+    height: 6.3333rem;
 }
 
 .android {

@@ -43,6 +43,7 @@ components:{}
     opacity: 0.8;
     color: black;
     font-size: .8rem;
+    /* font-family: 'winmantun23001356b6000b824eb5'; */
 }
 .btn2{
   margin-top: 10rem;
