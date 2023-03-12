@@ -29,6 +29,9 @@ h1+p {
   font-size: 1.8rem;
   padding: 2rem 0 3rem;
 }
+span{
+  font-size: 18px;
+}
 
 .main {
   display: flex;
@@ -52,7 +55,7 @@ h1+p {
   --bX: 50%;
   --bY: 80%;
 
-  width: 30rem;
+  width: 50rem;
   height: 36rem;
   border: 1px solid var(--background-color);
   border-radius: 1.6rem;
@@ -172,6 +175,7 @@ h1+p {
   color: hsla(0, 0%, 0%, .6);
   font-size: 1.6rem;
 }
+
 /* .mes1,.mes2,.mes3,.mes4 {
   position: absolute;
   display: flex;
