@@ -12,7 +12,7 @@
         <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
             <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Login_input" v-model="loginInfo.name"></div><br> 
             <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Login_input" v-model="loginInfo.tel"></div><br>
-            <a class="btn" @click="loginForm">登录</a>
+            <a class="btn" @click="loginForm" >登录</a>
             <!-- <router-link to="/Infos" class="btn">登录</router-link> 登录成功，跳转到个人信息主页面 -->
             <router-link to="/Register" class="btn">我要报名</router-link>
         </form>
@@ -20,6 +20,7 @@
   </template>
   
   <script>
+
   export default {
   name:'Login',
   data(){
@@ -34,17 +35,19 @@
             tel: this.loginInfo.tel
           }).then(res=>{
             alert(res.data.message)
-            if(res.data.message === '报名成功') {
+            if(res.data.message === '登录成功') {
+                this.$store.commit('updateLogin',res.data)
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/infos'
             }
-            )},3000)
+            )},1000)
             }
           }).catch(error =>{
             alert('未知错误')
  	  })
-        }
+      
+     }
   }
   }
   </script>

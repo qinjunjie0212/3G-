@@ -53,9 +53,10 @@ export default {
           }).then(res=>{
             alert(res.data.message)
             if(res.data.message === '报名成功') {
+                console.log(res.data);
                 setTimeout(() => {
                 this.$router.replace({
-                    path: '/infos'
+                    path: '/login'
             }
             )},3000)
             }
