@@ -58,9 +58,10 @@ export default {
             dir:this.formData.dir,
           }).then(res=>{
             if(res.data.message === '报名成功') {
+                console.log(res.data);
                 setTimeout(() => {
                 this.$router.replace({
-                    path: '/infos'
+                    path: '/login'
             }
             )},1000)
             }
