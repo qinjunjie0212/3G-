@@ -44,7 +44,7 @@ export default {
     components:{},
     methods:{
        registInfo() {
-        this.$axios.post('http://127.0.0.1:3007/api/reguser', {
+        this.$axios.post('http://43.138.89.150:5000/api/reguser', {
             name: this.formData.username,
             tel: this.formData.tel,
             qq:this.formData.qq,

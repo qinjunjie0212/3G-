@@ -40,32 +40,62 @@ import ref from 'vue'
             {
                   this.$refs[j].style.display='none'
             }
-            if(store.loginState === 0)
+            if(store.loginState === 0)//报名成功
             {
                 this.$refs[5].style.display='block'
             }
-            else if(store.loginState === 1)
+            else if(store.loginState === 1)//一面通过
             {
                 this.$refs[4].style.display='block'
-                // this.$refs[4].innerHTML='已通过'
-                // this.$ref[4].className='change'
+                this.$refs[6].innerHTML='已通过'
+                this.$refs[6].className='change'
+                this.$refs[6].style.color='green'
             }
-            else if(store.loginState === 2)
+            else if(store.loginState === 2)//一面未通过
             {
-                // this.$refs[].innerHTML='未通过'
+                this.$refs[5].style.display='block'
+                this.$refs[6].innerHTML='未通过'
+                this.$refs[6].className='change'
+                this.$refs[6].style.color='red'
             }
-            else if(store.loginState === 3)
+            else if(store.loginState === 3)//二面通过
             {
                 this.$refs[3].style.display='block'
+                this.$refs[7].style.color='green'
+                this.$refs[7].className='change'
+                this.$refs[7].innerHTML='已通过'
+                this.$refs[6].innerHTML='已通过'
+                this.$refs[6].className='change'
+                this.$refs[6].style.color='green'
             }
-            else if(store.loginState === 4)
+            else if(store.loginState === 4)//二面未通过
             {
-                // this.$refs[].innerHTML='未通过'
+                this.$refs[7].innerHTML='未通过'
+                this.$refs[7].style.color='red'
+                this.$refs[7].className='change'
+                this.$refs[4].style.display='block'
+                this.$refs[6].innerHTML='已通过'
+                this.$refs[6].className='change'
+                this.$refs[6].style.color='green'
             }
-            else if(store.loginState === 5)
+            else if(store.loginState === 5)//三面通过
             {
                 
+                this.$refs[8].className='change'
+                this.$refs[8].innerHTML='已通过'
                 this.$refs[2].style.display='block'
+                this.$refs[8].style.color='green'
+                this.$refs[7].style.color='green'
+                this.$refs[7].className='change'
+                this.$refs[7].innerHTML='已通过'
+                this.$refs[6].innerHTML='已通过'
+                this.$refs[6].className='change'
+                this.$refs[6].style.color='green'
+            }
+            else if(store.loginState === -1)
+            {
+                alert('请先登录')
+                window.location.href = ""
             }
         }
 }

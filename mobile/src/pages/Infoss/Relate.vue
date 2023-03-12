@@ -20,9 +20,17 @@
   </div>
 </template>
 <script>
+import store from '../../store'
 export default {
 name:'Relate',
-components:{}
+mounted(){
+            var store=this.$store.state
+            if(store.loginState === -1)
+            {
+                alert('请先登录')
+                window.location.href = ""
+            }
+          }
 }
 </script>
 

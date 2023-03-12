@@ -4,7 +4,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state() {
         return {
-            loginState: 5,
+            loginState: -1,
             loginToken: '',
         }
     },
