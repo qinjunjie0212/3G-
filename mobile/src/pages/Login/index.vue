@@ -10,16 +10,17 @@
         <!-- <router-link to="/About">返回</router-link> -->
         <router-link class="last" to="/About"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
         <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
-            <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Login_input" v-model.trim="loginInfo.name"></div><br> 
-            <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Login_input" v-model.trim="loginInfo.tel"></div><br>
-            <a class="btn" @click="loginForm">登录</a>
-            <!-- <router-link to="/Infos" class="btn">登录</router-link> -->
-            <router-link  replace to="/Register" class="btn">我要报名</router-link>
+            <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Login_input" v-model="loginInfo.name"></div><br> 
+            <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Login_input" v-model="loginInfo.tel"></div><br>
+            <a class="btn" @click="loginForm" >登录</a>
+            <!-- <router-link to="/Infos" class="btn">登录</router-link> 登录成功，跳转到个人信息主页面 -->
+            <router-link to="/Register" class="btn">我要报名</router-link>
         </form>
    </div>
   </template>
   
   <script>
+
   export default {
   name:'Login',
   data(){
@@ -31,26 +32,25 @@
     }
   },
   methods:{
-     loginForm(){
-        console.log(this.loginInfo.name)
+    loginForm(){
             this.$axios.post('http://43.138.89.150:5000/api/login', {
             name: this.loginInfo.name,
             tel: this.loginInfo.tel
           }).then(res=>{
+            alert(res.data.message)
             if(res.data.message === '登录成功') {
+                this.$store.commit('updateLogin',res.data)
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/infos'
             }
             )},1000)
             }
-            else{
-                alert(res.data.message)
-            }
           }).catch(error =>{
             alert('未知错误')
  	  })
-        } 
+      
+     }
   }
   }
   </script>

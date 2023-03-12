@@ -41,7 +41,7 @@ reg.addEventListener('submit',function(e) {
 // let username2=document.querySelector('#username2').value.trim();
 // let tel2=document.querySelector('#tel2').value.trim();
 // let xhr=new XMLHttpRequest();
-// xhr.open('post','http://localhost:3007/api/message');
+// xhr.open('post','http://43.138.89.150:5000/api/message');
 // xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
 // xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 // xhr.send(`name=${username2}&tel=${tel2}`);
