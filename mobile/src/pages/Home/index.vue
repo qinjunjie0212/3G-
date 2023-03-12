@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <router-link replace to="/about">
 
     <img src="./../../assets/img/背景.jpeg" alt="">
@@ -31,11 +31,15 @@ export default {
 </script>
 <style scoped>
 .shuiyin{
-  margin-top: 28rem;
-    margin-left: 1rem;
+  margin-top: -2.7rem;
+  margin-left: -8rem;
   z-index: 999;
 }
-div {
+.bone {
+  width: 200px;
+  height: 200px;
+}
+.box {
   margin-top: 4rem;
     font: weight 50px; ;
     /* background: #fafafa; */
