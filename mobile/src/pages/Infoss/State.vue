@@ -2,7 +2,7 @@
 <div id="father">
         <div id="picture">
             <img src="./../../assets/img/太阳.png" class="sun1">
-    <router-link to="/infos">
+    <router-link to="/infos"  replace>
       <img src="./../../assets/img/左箭头.png" class="leftArrow">
     </router-link>
         </div>

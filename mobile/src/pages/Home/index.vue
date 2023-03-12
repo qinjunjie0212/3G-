@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/about">
+    <router-link replace to="/about">
 
     <img src="./../../assets/img/背景.jpeg" alt="">
         <img src="./../../assets/img/三角.png" alt="">
@@ -15,7 +15,7 @@
         <img src="./../../assets/img/灰色三角.png" alt="">
     </router-link>
     <span>点击任意位置继续</span>
-
+    <img class="shuiyin" src="./../../assets/img/水印.png" alt="">
   </div>
 </template>
 
@@ -30,6 +30,11 @@ export default {
 }
 </script>
 <style scoped>
+.shuiyin{
+  margin-top: 28rem;
+    margin-left: 1rem;
+  z-index: 999;
+}
 div {
   margin-top: 4rem;
     font: weight 50px; ;

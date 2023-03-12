@@ -9,7 +9,7 @@
         <img src="../../assets/img/太阳.png" alt="" class="sun">
     <!-- 这里的返回与之前不同，是返回到登录页面 -->
     <!-- <router-link to="/login">返回</router-link> -->
-    <router-link class="last" to="/login"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
+    <router-link replace class="last" to="/login"><img src="./../../assets/img/左箭头.png" alt=""></router-link>
     <form action="#" id="reg" enctype="application/x-www-form-urlencoded">                
             <div class="Div_hint"><span class="Span_hint">姓名：</span><input type="text" placeholder="姓名" id="username" class="Register_input" v-model="formData.username"></div><br> 
             <div class="Div_hint"><span class="Span_hint">手机号：</span><input type="text" placeholder="手机号" id="tel" class="Register_input" v-model="formData.tel"></div><br>
@@ -38,11 +38,17 @@ export default {
     name:'Register',
     data(){
         return {
-            formData:{}
+            formData:{
+                username:'',
+                tel:'',
+                qq:'',
+                class:''
+            }
         }
     },
     components:{},
     methods:{
+        // localStorage.setItem('name',this.formData.name)
        registInfo() {
         this.$axios.post('http://43.138.89.150:5000/api/reguser', {
             name: this.formData.username,
@@ -51,14 +57,16 @@ export default {
             banji:this.formData.class,
             dir:this.formData.dir,
           }).then(res=>{
-            alert(res.data.message)
             if(res.data.message === '报名成功') {
                 console.log(res.data);
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/login'
             }
-            )},3000)
+            )},1000)
+            }
+            else{
+                alert(res.data.message)
             }
           }).catch(error =>{
             alert('未知错误')
@@ -86,7 +94,7 @@ export default {
     border-bottom: .04rem solid black;
     opacity: 0.8;
     background-color: transparent;
-    margin-left: 1.3333rem;
+    margin-left: -0.3333rem;
 }
 .Register_input:focus {
     outline: none;
@@ -115,7 +123,7 @@ export default {
     background: #f4cf47;
     opacity: 0.8;
     margin-bottom: 1.2rem;
-    margin-left: 2.2667rem;
+    margin-left: 5.2667rem;
     color: black;
     font-size: .8rem;
 }
@@ -128,7 +136,7 @@ select {
     opacity: 0.8;
     background-color: transparent;
     opacity: 0.8;
-    margin-left: -2.3rem;
+    margin-left: -3.3rem;
 }
 select:focus {
     outline: none;
@@ -185,6 +193,7 @@ select option {
     top: -9rem;
     left: -2.1333rem;
     opacity: 0.8;
+    z-index: 0;
 }
 
 .title {
@@ -193,6 +202,7 @@ select option {
     left: 2.8rem;
     font-weight: bold;
     font-size: 2.5rem;
+    z-index: 10;
 }
 
 .last img{
