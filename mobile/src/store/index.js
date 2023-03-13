@@ -6,7 +6,7 @@ const store = new Vuex.Store({
         return {
             loginState: -1,
             loginToken: '',
-            status:-1,
+            status: -1,
         }
     },
     mutations: {
@@ -14,8 +14,9 @@ const store = new Vuex.Store({
             data.loginState = content.status
             data.loginToken = content.token
         },
-        updatestatus(data,content){
-            data.status=content.status
+        updatestatus(data, content) {
+            console.log('content', content);
+            data.status = content.status
         }
     }
 })

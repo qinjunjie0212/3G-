@@ -31,7 +31,7 @@
 
 <script>
 import store from '../../store'
-import ref from 'vue'
+//import ref from 'vue'
 import axios from 'axios'
     export default {
     name:'State',
@@ -60,35 +60,35 @@ import axios from 'axios'
         }).then(res => { // 成功后的回调函数
             console.log('返回数据',res.data.data.status)
             this.$store.commit('updatestatus',res.data.data.status)
-            return res.data 
-        }).then(res =>{
-            var store=this.$store.state
-            console.log('fanhui',res.data.status)
+            //var store=this.$store.state
+            //console.log('fanhui',res.data.status)
             for(let j=1;j<=5;j++)
             {
                 this.$refs[j].style.display='none'
             }
-            if(res.data.status === 0)//报名成功
+            if(res.data.data.status == 0)//报名成功
             {
+                console.log(111)
                 this.$refs[5].style.display='block'
             }
-            else if(res.data.status === 1)//一面通过
+            else if(res.data.data.status == 1)//一面通过
             {
                 this.$refs[4].style.display='block'
                 this.$refs[6].innerHTML='已通过'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(res.data.status === 2)//一面未通过
+            else if(res.data.data.status == 2)//一面未通过
             {
                 this.$refs[5].style.display='block'
                 this.$refs[6].innerHTML='未通过'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='red'
             }
-            else if(res.data.status === 3)//二面通过
+            else if(res.data.data.status == 3)//二面通过
             {
                 this.$refs[3].style.display='block'
+                console.log(111)
                 this.$refs[7].style.color='green'
                 this.$refs[7].className='change'
                 this.$refs[7].innerHTML='已通过'
@@ -96,7 +96,7 @@ import axios from 'axios'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(res.data.status === 4)//二面未通过
+            else if(res.data.data.status == 4)//二面未通过
             {
                 this.$refs[7].innerHTML='未通过'
                 this.$refs[7].style.color='red'
@@ -106,7 +106,7 @@ import axios from 'axios'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(res.data.status === 5)//三面通过
+            else if(res.data.data.status == 5)//三面通过
             {
                 
                 this.$refs[8].className='change'
@@ -120,11 +120,12 @@ import axios from 'axios'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(res.data.status === -1)
+            else if(this.$store.state.status == -1)
             {
                 alert('请先登录')
                 window.location.href = ""
             }
+            //return res.data 
         })
         
     }

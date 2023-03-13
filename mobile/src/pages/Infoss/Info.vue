@@ -6,11 +6,11 @@
     </router-link>
         <br>
         <h1>Personal Information</h1>
-            <div class="tittles">  姓名Name:</div>
-            <div class="tittles">  手机号Phone :</div>
-            <div class="tittles">  QQ :</div>
-            <div class="tittles">  专业班级Class :</div>
-            <div class="tittles">  意向Direction :</div>
+            <div class="tittles" ref="1">  姓名Name:</div>
+            <div class="tittles" ref="2">  手机号Phone :</div>
+            <div class="tittles" ref="3">  QQ :</div>
+            <div class="tittles" ref="4">  专业班级Class :</div>
+            <div class="tittles" ref="5">  意向Direction :</div>
         <!-- <br> -->
         <!-- <br> -->
         <!-- <br> -->
@@ -26,10 +26,29 @@
 </template>
 
 <script>
-export default {
-name:'Info',
-
-}
+    import store from '../../store'
+    import axios from 'axios'
+    export default {
+        mounted(){
+            this.$axios.defaults.headers.common['Authorization'] = this.$store.state.loginToken
+            this.$axios.get('http://43.138.89.150:5000/my/userinfo').then(res=>{
+                if(res.data.message==="获取用户信息成功"){
+                    
+                    this.$refs[1].innerHTML='姓名Name:    '+res.data.data.name
+                    this.$refs[2].innerHTML='手机号Phone:   '+res.data.data.tel
+                    this.$refs[3].innerHTML='QQ:   '+res.data.data.qq
+                    this.$refs[4].innerHTML='专业班级Class :   '+res.data.data.banji
+                    this.$refs[5].innerHTML='意向Direction :    '+res.data.data.dir
+                }
+                else{
+                    alert(res.data.message)
+                    window.location.href = ""
+                }
+            }).catch(err=>{
+                alert("未知错误")
+            })
+        }
+    }
 </script>
 
 <style>
