@@ -32,33 +32,61 @@
 <script>
 import store from '../../store'
 import ref from 'vue'
+import axios from 'axios'
     export default {
     name:'State',
         mounted(){
+    //         this.$axios.get('http://127.0.0.1:3007/my/userinfo', {
+    //             'Authorization':this.$store.state.loginToken,
+    //             'Content-Type':'application/x-www-form-urlencoded'
+    //       }).then(res=>{
+    //         alert(res.data.message)
+    //         console.log('111',res.data.message)
+    //         console.log('222',res.data)
+    //         if(res.data.message === '获取用户信息成功') {
+    //             console.log('返回数据',res.data)
+    //             this.$store.commit('updatestatus',res.data.status)
+    //         }
+    //       }).catch(error =>{
+    //         alert('未知错误')
+ 	//   })
+    axios({
+        method: "get",
+        url: "http://43.138.89.150:5000/my/userinfo",
+            headers: { // 设置请求头
+                'Authorization': this.$store.state.loginToken,
+                'Content-Type':'application/x-www-form-urlencoded',
+            },
+        }).then(res => { // 成功后的回调函数
+            console.log('返回数据',res.data.data.status)
+            this.$store.commit('updatestatus',res.data.data.status)
+            return res.data 
+        }).then(res =>{
             var store=this.$store.state
+            console.log('fanhui',res.data.status)
             for(let j=1;j<=5;j++)
             {
-                  this.$refs[j].style.display='none'
+                this.$refs[j].style.display='none'
             }
-            if(store.loginState === 0)//报名成功
+            if(res.data.status === 0)//报名成功
             {
                 this.$refs[5].style.display='block'
             }
-            else if(store.loginState === 1)//一面通过
+            else if(res.data.status === 1)//一面通过
             {
                 this.$refs[4].style.display='block'
                 this.$refs[6].innerHTML='已通过'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(store.loginState === 2)//一面未通过
+            else if(res.data.status === 2)//一面未通过
             {
                 this.$refs[5].style.display='block'
                 this.$refs[6].innerHTML='未通过'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='red'
             }
-            else if(store.loginState === 3)//二面通过
+            else if(res.data.status === 3)//二面通过
             {
                 this.$refs[3].style.display='block'
                 this.$refs[7].style.color='green'
@@ -68,7 +96,7 @@ import ref from 'vue'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(store.loginState === 4)//二面未通过
+            else if(res.data.status === 4)//二面未通过
             {
                 this.$refs[7].innerHTML='未通过'
                 this.$refs[7].style.color='red'
@@ -78,7 +106,7 @@ import ref from 'vue'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(store.loginState === 5)//三面通过
+            else if(res.data.status === 5)//三面通过
             {
                 
                 this.$refs[8].className='change'
@@ -92,12 +120,14 @@ import ref from 'vue'
                 this.$refs[6].className='change'
                 this.$refs[6].style.color='green'
             }
-            else if(store.loginState === -1)
+            else if(res.data.status === -1)
             {
                 alert('请先登录')
                 window.location.href = ""
             }
-        }
+        })
+        
+    }
 }
 </script>
 
