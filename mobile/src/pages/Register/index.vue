@@ -17,9 +17,9 @@
             <div class="Div_hint"><span class="Span_hint">专业班级：</span><input type="text" placeholder="专业班级" id="class" class="Register_input" v-model="formData.class"></div><br>
             <div class="Div_hint"><span class="Span_hint">方向选择：</span>
                 <select class="dir" v-model="formData.dir">
-                    <option value="请选择方向">请选择方向</option>
+                    <option value="">请选择方向</option>
                     <option value="Web">Web</option>
-                    <option value="iOS">iOS</option>
+                    <option value="iOS">IOS</option>
                     <option value="Server">Server</option>
                     <option value="Andriod">Andriod</option>
                     <option value="未定向">未定向</option>
@@ -42,7 +42,8 @@ export default {
                 username:'',
                 tel:'',
                 qq:'',
-                class:''
+                class:'',
+                dir:''
             }
         }
     },
@@ -57,6 +58,7 @@ export default {
             banji:this.formData.class,
             dir:this.formData.dir,
           }).then(res=>{
+            alert(res.data.message)
             if(res.data.message === '报名成功') {
                 console.log(res.data);
                 setTimeout(() => {

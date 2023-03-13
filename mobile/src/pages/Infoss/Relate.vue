@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link replace to="/about">      <img src="./../../assets/img/右箭头.png" alt="" class="paw">
+    <router-link replace to="/about"><img src="./../../assets/img/右箭头.png" alt="" class="paw">
 </router-link>
 <br>
 <br>
