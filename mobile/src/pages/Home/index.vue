@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <router-link replace to="/about">
 
     <img src="./../../assets/img/背景.jpeg" alt="">
@@ -23,6 +23,7 @@
         <img src="./../../assets/img/浅灰三角.png" alt="" class="c7">
     </router-link>
     <span>点击任意位置继续</span>
+    <img class="shuiyin" src="./../../assets/img/水印.png" alt="">
   </div>
 </template>
 

@@ -44,12 +44,12 @@
     }
 .com{
   border-bottom: 4px solid #878787;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     color: #515151;
 }
 .onea{
     text-align: center;
-    width: 6rem;
+    width: 5.4rem;
     height: 2rem;
     font-size: 1.5rem;
     top: 11.5rem;
@@ -58,7 +58,7 @@
   }
   .twob{
     text-align: center;
-    width: 6rem;
+    width: 6.4rem;
     height: 2rem;
     font-size: 1.5rem;
     top: 11.5rem;
