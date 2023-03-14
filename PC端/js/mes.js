@@ -6,7 +6,7 @@ signUpButton.addEventListener('click',() => container.classList.add('right-panel
 signInButton.addEventListener('click',() => container.classList.remove('right-panel-active'))
 
 let xhr=new XMLHttpRequest();
-xhr.open('get','http://43.138.89.150:5000/my/userinfo');
+xhr.open('get','http://43.138.89.150:8889/my/userinfo');
 xhr.setRequestHeader('Authorization',localStorage.getItem('userToken'));
 xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 xhr.send();
@@ -59,7 +59,7 @@ if(!token) {
 }
 
 // /* let xhr=new XMLHttpRequest();
-// xhr.open('post','http://43.138.89.150:5000/api/message');
+// xhr.open('post','http://43.138.89.150:8889/api/message');
 // xhr.setRequestHeader('Token',localStorage.getItem('userToken'));
 // xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 // xhr.send();
