@@ -47,5 +47,5 @@ app.use(function (err, req, res, next) {
 
 // 调用app.listen方法，指定端口号并启动web服务器
 app.listen('5000', () => {
-    console.log('api server running at http://43.138.89.150:5000/')
+    console.log('api server running at http://43.138.89.150:8889/')
 })
