@@ -52,7 +52,7 @@ import axios from 'axios'
  	//   })
     axios({
         method: "get",
-        url: "http://43.138.89.150:5000/my/userinfo",
+        url: "http://43.138.89.150:8889/my/userinfo",
             headers: { // 设置请求头
                 'Authorization': this.$store.state.loginToken,
                 'Content-Type':'application/x-www-form-urlencoded',

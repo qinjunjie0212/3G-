@@ -33,7 +33,7 @@
   },
   methods:{
     loginForm(){
-            this.$axios.post('http://43.138.89.150:5000/api/login', {
+            this.$axios.post('http://43.138.89.150:8889/api/login', {
             name: this.loginInfo.name,
             tel: this.loginInfo.tel
           }).then(res=>{

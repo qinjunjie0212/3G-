@@ -31,7 +31,7 @@
     export default {
         mounted(){
             this.$axios.defaults.headers.common['Authorization'] = this.$store.state.loginToken
-            this.$axios.get('http://43.138.89.150:5000/my/userinfo').then(res=>{
+            this.$axios.get('http://43.138.89.150:8889/my/userinfo').then(res=>{
                 if(res.data.message==="获取用户信息成功"){
                     
                     this.$refs[1].innerHTML='姓名Name:    '+res.data.data.name
