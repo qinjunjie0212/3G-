@@ -51,7 +51,7 @@ export default {
     methods:{
         // localStorage.setItem('name',this.formData.name)
        registInfo() {
-        this.$axios.post('http://43.138.89.150:5000/api/reguser', {
+        this.$axios.post('http://43.138.89.150:8889/api/reguser', {
             name: this.formData.username,
             tel: this.formData.tel,
             qq:this.formData.qq,
