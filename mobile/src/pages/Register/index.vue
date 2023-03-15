@@ -58,9 +58,8 @@ export default {
             banji:this.formData.class,
             dir:this.formData.dir,
           }).then(res=>{
-            alert(res.data.message)
             if(res.data.message === '报名成功') {
-                console.log(res.data);
+                alert(res.data.message)
                 setTimeout(() => {
                 this.$router.replace({
                     path: '/login'
